@@ -1,0 +1,49 @@
+<PISI>
+    <Source>
+        <Name>python3</Name>
+        <Homepage>http://www.python.org/</Homepage>
+        <Packager>
+            <Name>Ramazan Utku</Name>
+            <Email>ramazanutku@gmail.com</Email>
+        </Packager>
+        <License>custom</License>
+        <PartOf>programming.language</PartOf>
+        <Summary>Next generation of the python high-level scripting language</Summary>
+        <Description>Next generation of the python high-level scripting language</Description>
+        <BuildDependencies>
+            <Dependency>expat-devel</Dependency>
+            <Dependency>sqlite-devel</Dependency>
+            <Dependency>tcltk-devel</Dependency>
+            <Dependency>valgrind</Dependency>
+        </BuildDependencies>
+        <Archive sha1sum="4c2d562a0681ba27bc920500050e2f08de224311" type="tarbz2">http://www.python.org/ftp/python/3.2.3/Python-3.2.3.tar.bz2</Archive>
+        <Patches/>
+    </Source>
+    <Package>
+        <Name>python3</Name>
+        <RuntimeDependencies>
+            <Dependency>bzip2</Dependency>
+            <Dependency>gdbm</Dependency>
+            <Dependency>libffi</Dependency>
+            <Dependency>openssl</Dependency>
+            <Dependency>zlib</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="executable" permanent="0">/usr/bin/*</Path>
+            <Path fileType="header" permanent="0">/usr/include/python3.2mu/*</Path>
+            <Path fileType="library" permanent="0">/usr/lib/pkgconfig/*</Path>
+            <Path fileType="library" permanent="0">/usr/lib/python3.2/*</Path>
+	    <Path fileType="library" permanent="0">/usr/lib/*</Path>
+            <Path fileType="man" permanent="0">/usr/share/man/man1/*</Path>
+        </Files>
+    </Package>
+    <History>
+        <Update release="1">
+            <Date>2012-07-20</Date>
+            <Version>3.2.3</Version>
+            <Comment>First Package</Comment>
+            <Name>Ramazan Utku</Name>
+            <Email>ramazanutku@gmail.com</Email>
+        </Update>
+    </History>
+</PISI>

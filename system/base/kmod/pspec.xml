@@ -1,0 +1,83 @@
+<?xml version="1.0" ?>
+<!DOCTYPE PISI SYSTEM "http://www.pardus.org.tr/projeler/pisi/pisi-spec.dtd">
+<PISI>
+    <Source>
+        <Name>kmod</Name>
+        <Homepage>http://git.kernel.org/?p=utils/kernel/kmod/kmod.git;a=summary</Homepage>
+        <Packager>
+            <Name>Erdem Artan</Name>
+            <Email>erdem@pardus-linux.org</Email>
+        </Packager>
+        <License>GPLv2+</License>
+        <IsA>app:console</IsA>
+        <Summary>Linux kernel module management utilities</Summary>
+        <Description>Linux kernel module management utilities</Description>
+        <Archive sha1sum="d3576dd35095b600e6563613402c184f01b86f13" type="tarbz2">ftp://ftp.kernel.org/pub/linux/utils/kernel/kmod/kmod-8.tar.bz2</Archive>
+        <BuildDependencies>
+            <Dependency>chrpath</Dependency>
+        </BuildDependencies>
+        <Patches>
+            <Patch level="1">0001-split-usr-read-configs-from-lib-depmod.d-modprobe.d.patch</Patch>
+            <Patch level="1">0002-config-hardcode-the-path-to-modules-to-be-lib-module.patch</Patch>
+            <Patch level="1">0001-libkmod-file-gracefully-handle-errors-from-zlib.patch</Patch>
+            <Patch level="1">0002-depmod-report-failures-in-loading-symbols.patch</Patch>
+        </Patches>
+    </Source>
+
+    <Package>
+        <Name>kmod</Name>
+        <RuntimeDependencies>
+            <Dependency version="current">libkmod</Dependency>
+        </RuntimeDependencies>
+        <Replaces>
+            <Package>module-init-tools</Package>
+        </Replaces>
+        <Files>
+            <Path fileType="executable">/usr/bin</Path>
+            <Path fileType="executable">/bin</Path>
+            <Path fileType="executable">/sbin</Path>
+            <Path fileType="manfile">/usr/share/man</Path>
+            <Path fileType="doc">/usr/share/doc</Path>
+            <Path fileType="config">/etc</Path>
+            <Path fileType="config">/usr/lib/depmod.d/</Path>
+        </Files>
+        <AdditionalFiles>
+            <AdditionalFile owner="root" permission="0644" target="/usr/lib/depmod.d/search.conf">depmod-search.conf</AdditionalFile>
+        </AdditionalFiles>
+    </Package>
+    <Package>
+        <Name>libkmod-devel</Name>
+        <RuntimeDependencies>
+            <Dependency version="current">libkmod</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="header">/usr/include</Path>
+        </Files>
+    </Package>
+    <Package>
+        <Name>libkmod</Name>
+        <Summary>kmod libraries</Summary>
+        <Files>
+            <Path fileType="library">/usr/lib</Path>
+        </Files>
+    </Package>
+    <Package>
+        <Name>libkmod-32bit</Name>
+        <PartOf>emul32</PartOf>
+        <Summary>32bit libraries of libkmod</Summary>
+        <BuildType>emul32</BuildType>
+        <Files>
+            <Path fileType="library">/usr/lib32</Path>
+        </Files>
+    </Package>
+
+    <History>
+        <Update release="1">
+            <Date>2012-06-05</Date>
+            <Version>8</Version>
+            <Comment>First release</Comment>
+            <Name>Erdem Artan</Name>
+            <Email>erdem@pardus-linux.org</Email>
+        </Update>
+    </History>
+</PISI>

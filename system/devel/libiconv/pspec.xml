@@ -1,0 +1,51 @@
+<PISI>
+    <Source>
+        <Name>libiconv</Name>
+        <Homepage>http://www.gnu.org/software/libiconv/</Homepage>
+        <Packager>
+            <Name>Osman Erkan</Name>
+            <Email>namso-01@hotmail.it</Email>
+        </Packager>
+        <License>GPLv3</License>
+        <License>LGPLv2</License>
+        <IsA>app:console</IsA>
+        <PartOf>system.devel</PartOf>
+        <Summary>text is often encoded using a language or country dependent character encoding.</Summary>
+        <Description>For historical reasons, international text is often encoded using a language or country dependent character encoding.</Description>
+        <Archive sha1sum="be7d67e50d72ff067b2c0291311bc283add36965" type="targz">http://ftp.gnu.org/pub/gnu/libiconv/libiconv-1.14.tar.gz</Archive>
+        <Patches/>
+    </Source>
+    
+    <Package>
+        <Name>libiconv</Name>
+        <Files>
+            <Path fileType="executable">/usr/bin/</Path>
+            <Path fileType="library">/usr/lib/</Path>
+            <Path fileType="doc">/usr/share/doc/libiconv</Path>
+            <Path fileType="lovaledata">/usr/share/locale/</Path>
+            <Path fileType="man">/usr/share/man/man1</Path>
+            <Path fileType="man">/usr/share/man/man3</Path>
+        </Files>
+    </Package>
+    
+    <Package>
+        <Name>libiconv-devel</Name>
+        <Summary>libiconv için geliştirme dosyaları</Summary>
+        <RuntimeDependencies>
+			<Dependency release="current">libiconv</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="header">/usr/include/</Path>
+        </Files>
+    </Package>
+    
+    <History>
+        <Update release="1">
+            <Date>2012-09-03</Date>
+            <Version>1.14</Version>
+            <Comment>First Release</Comment>
+            <Name>Osman Erkan</Name>
+            <Email>namso-01@hotmail.it</Email>
+        </Update>
+    </History>
+</PISI>

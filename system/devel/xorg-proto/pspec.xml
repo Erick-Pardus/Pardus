@@ -1,0 +1,415 @@
+<?xml version="1.0" ?>
+<!DOCTYPE PISI SYSTEM "http://www.pardus.org.tr/projeler/pisi/pisi-spec.dtd">
+<PISI>
+    <Source>
+        <Name>xorg-proto</Name>
+        <Homepage>http://x.org/</Homepage>
+        <Packager>
+            <Name>Fatih Arslan</Name>
+            <Email>farslan@pardus.org.tr</Email>
+        </Packager>
+        <License>MIT</License>
+        <IsA>library</IsA>
+        <Summary>X.Org Protocol Headers</Summary>
+        <Description>This package includes the protocol headers needed for X11 development.</Description>
+        <Archive sha1sum="ef1765eeb5e9e38d080225fe6a64ed7cd2984b46" type="tarbz2">mirrors://xorg/individual/proto/bigreqsproto-1.1.2.tar.bz2</Archive>
+        <Archive sha1sum="aa7b5abcfd5bbfad7cb681ce89dc1d6e381e3044" type="tarbz2">mirrors://xorg/individual/proto/compositeproto-0.4.2.tar.bz2</Archive>
+        <Archive sha1sum="bd0f0f4dc8f37eaabd9279d10fe2889710507358" type="tarbz2">mirrors://xorg/individual/proto/damageproto-1.2.1.tar.bz2</Archive>
+        <Archive sha1sum="3b8b273b8ef3d8dbab998df9ec1dddf99edf4d91" type="tarbz2">mirrors://xorg/individual/proto/dmxproto-2.3.1.tar.bz2</Archive>
+        <Archive sha1sum="2bc4e8f00778b1f3fe58b4c4f93607ac2adafbbf" type="tarbz2">mirrors://xorg/individual/proto/dri2proto-2.8.tar.bz2</Archive>
+        <Archive sha1sum="ab605af5da8c98c0c2f8b2c578fed7c864ee996a" type="tarbz2">mirrors://xorg/individual/proto/fixesproto-5.0.tar.bz2</Archive>
+        <Archive sha1sum="538f0880faa6981cb1a348ced93dc715c42840f7" type="tarbz2">mirrors://xorg/individual/proto/fontsproto-2.1.2.tar.bz2</Archive>
+        <Archive sha1sum="6f1a971c6c6da3daf860ff2888fa0eae347479b0" type="tarbz2">mirrors://xorg/individual/proto/glproto-1.4.16.tar.bz2</Archive>
+        <Archive sha1sum="500e0a6dac3523887c0b82753fe5e9d4bb982137" type="tarbz2">mirrors://xorg/individual/proto/inputproto-2.2.tar.bz2</Archive>
+        <Archive sha1sum="a2cc82357c22a1f4d6243017982c32703c95575c" type="tarbz2">mirrors://xorg/individual/proto/kbproto-1.0.6.tar.bz2</Archive>
+        <Archive sha1sum="65d2fc4440adf1557cde2b36901a3de21ab189c1" type="tarbz2">mirrors://xorg/individual/proto/randrproto-1.4.0.tar.bz2</Archive>
+        <Archive sha1sum="1f48c4b0004d8b133efd0498e8d88d68d3b9199c" type="tarbz2">mirrors://xorg/individual/proto/recordproto-1.14.2.tar.bz2</Archive>
+        <Archive sha1sum="7ae9868a358859fe539482b02414aa15c2d8b1e4" type="tarbz2">mirrors://xorg/individual/proto/renderproto-0.11.1.tar.bz2</Archive>
+        <Archive sha1sum="9ff9bb9243b0474330959dc3853973523c9dd9ce" type="tarbz2">mirrors://xorg/individual/proto/resourceproto-1.2.0.tar.bz2</Archive>
+        <Archive sha1sum="640a2cbef5893aacda74799e6fa4d973e629b753" type="tarbz2">mirrors://xorg/individual/proto/scrnsaverproto-1.2.2.tar.bz2</Archive>
+        <Archive sha1sum="bb8b366687a7f345e3a8697bac516cb436cbf4b2" type="tarbz2">mirrors://xorg/individual/proto/videoproto-2.3.1.tar.bz2</Archive>
+        <Archive sha1sum="59ae9ec6414964440bf654b207618e5dd66a32fb" type="tarbz2">mirrors://xorg/individual/proto/xcmiscproto-1.2.2.tar.bz2</Archive>
+        <Archive sha1sum="f969e02009adf2d51fd1ba4583a859984728a461" type="tarbz2">mirrors://xorg/individual/proto/xextproto-7.2.1.tar.bz2</Archive>
+        <Archive sha1sum="312a2ea708b257520c1af4393b69d73a393a478f" type="tarbz2">mirrors://xorg/individual/proto/xf86bigfontproto-1.2.0.tar.bz2</Archive>
+        <Archive sha1sum="97a06120e7195c968875e8ba42e82c90ab54948b" type="tarbz2">mirrors://xorg/individual/proto/xf86dgaproto-2.1.tar.bz2</Archive>
+        <Archive sha1sum="23e861f40ba0f0cbbfd7db7ba2ef623762ffca17" type="tarbz2">mirrors://xorg/individual/proto/xf86driproto-2.1.1.tar.bz2</Archive>
+        <Archive sha1sum="11d54c3210887631ea71e8f8030a77692e964fc4" type="tarbz2">mirrors://xorg/individual/proto/xf86vidmodeproto-2.3.1.tar.bz2</Archive>
+        <Archive sha1sum="818bffc16139d6e3de4344c83f00c495d3536753" type="tarbz2">mirrors://xorg/individual/proto/xineramaproto-1.2.1.tar.bz2</Archive>
+        <Archive sha1sum="5d7f00d1dbe6cf8e725841ef663f0ee2491ba5b2" type="tarbz2">mirrors://xorg/individual/proto/xproto-7.0.23.tar.bz2</Archive>
+        <Archive sha1sum="4abb036371670ecc25d32e48b3277fe203ae5203" type="tarbz2">mirrors://xorg/individual/proto/xproxymanagementprotocol-1.0.3.tar.bz2</Archive>
+        <Archive sha1sum="e079a56e0f6ae41fa985b30212340f6e1ec05f8b" type="tarbz2">http://cekirdek.pardus.org.tr/~fatih/dist/xorg/vncproto-20070501.tar.bz2</Archive>
+        <BuildDependencies>
+            <Dependency versionFrom="1.16.0">util-macros</Dependency>
+        </BuildDependencies>
+        <Patches>
+            <Patch level="1">docdir.patch</Patch>
+        </Patches>
+    </Source>
+
+    <Package>
+        <Name>xorg-proto</Name>
+        <Files>
+            <Path fileType="header">/usr/include</Path>
+            <Path fileType="data">/usr/lib/pkgconfig</Path>
+            <Path fileType="doc">/usr/share/doc</Path>
+        </Files>
+    </Package>
+
+    <History>
+        <Update release="39">
+            <Date>2012-09-19</Date>
+            <Version>7.6</Version>
+            <Comment>Version bump</Comment>
+            <Name>Yusuf Aydemir</Name>
+            <Email>yusuf.aydemir@istanbul.com</Email>
+        </Update>      
+        <Update release="38">
+            <Date>2011-12-21</Date>
+            <Version>7.6</Version>
+            <Comment>Version bump</Comment>
+            <Name>Ozan Çağlayan</Name>
+            <Email>ozan@pardus.org.tr</Email>
+        </Update>
+        <Update release="37">
+            <Date>2011-06-30</Date>
+            <Version>7.6</Version>
+            <Comment>
+                New releases:
+                * dri2proto-2.6
+                * glproto-1.4.14
+                * inputproto-2.0.2
+            </Comment>
+            <Name>Fatih Arslan</Name>
+            <Email>farslan@pardus.org.tr</Email>
+        </Update>
+        <Update release="36">
+            <Date>2011-05-17</Date>
+            <Version>7.6</Version>
+            <Comment>Update release of Xextproto to be compatible with new libXext 1.3.0</Comment>
+            <Name>Fatih Arslan</Name>
+            <Email>farslan@pardus.org.tr</Email>
+        </Update>
+        <Update release="35">
+            <Date>2011-03-23</Date>
+            <Version>7.6</Version>
+            <Comment>
+                New releases:
+                * fixesproto-5.0
+                * xproto-7.0.21
+            </Comment>
+            <Name>Fatih Arslan</Name>
+            <Email>farslan@pardus.org.tr</Email>
+        </Update>
+        <Update release="34">
+            <Date>2011-01-07</Date>
+            <Version>7.6</Version>
+            <Comment>
+                New releases:
+                * dmxproto-2.3.1
+                * xf86driproto-2.1.1
+                * xf86vidmodeproto-2.3.1
+                * xineramaproto-1.2.1
+            </Comment>
+            <Name>Fatih Arslan</Name>
+            <Email>farslan@pardus.org.tr</Email>
+        </Update>
+        <Update release="33">
+            <Date>2010-12-14</Date>
+            <Version>7.6</Version>
+            <Comment>
+                New releases:
+                * xproto-7.0.20 (includes touchpad patch)
+                * resourceproto-1.1.1
+            </Comment>
+            <Name>Fatih Arslan</Name>
+            <Email>farslan@pardus.org.tr</Email>
+        </Update>
+        <Update release="32">
+            <Date>2010-11-30</Date>
+            <Version>7.6</Version>
+            <Comment>Add XF86XK_TouchpadOn/Off keysyms</Comment>
+            <Name>Fatih Arslan</Name>
+            <Email>farslan@pardus.org.tr</Email>
+        </Update>
+        <Update release="31">
+            <Date>2010-11-30</Date>
+            <Version>7.6</Version>
+            <Comment>
+                New releases:
+                * inputproto-2.0.1
+                * xproto-7.0.19
+            </Comment>
+            <Name>Fatih Arslan</Name>
+            <Email>farslan@pardus.org.tr</Email>
+        </Update>
+        <Update release="30">
+            <Date>2010-11-01</Date>
+            <Version>7.6_20101101</Version>
+            <Comment>
+                New releases:
+                - bigreqsproto-1.1.1
+                - compositeproto-0.4.2
+                - damageproto-1.2.1
+                - fixesproto-4.1.2
+                - fontsproto-2.1.1
+                - randrproto-1.3.2
+                - recordproto-1.14.1
+                - scrnsaverproto-1.2.1
+                - xcmiscproto-1.2.1
+            </Comment>
+            <Name>Fatih Aşıcı</Name>
+            <Email>fatih@pardus.org.tr</Email>
+        </Update>
+        <Update release="29">
+            <Date>2010-10-11</Date>
+            <Version>7.6_20100813</Version>
+            <Comment>Mass rebuild for Pardus 2011 Beta</Comment>
+            <Name>Fatih Aşıcı</Name>
+            <Email>fatih@pardus.org.tr</Email>
+        </Update>
+        <Update release="28">
+            <Date>2010-08-13</Date>
+            <Version>7.6_20100813</Version>
+            <Comment>
+                New releases:
+                - glproto-1.4.12
+                - kbproto-1.0.5
+                - renderproto-0.11.1
+                - videoproto-2.3.1
+                - xextproto-7.1.2
+                - xproto-7.0.18
+            </Comment>
+            <Name>Fatih Aşıcı</Name>
+            <Email>fatih@pardus.org.tr</Email>
+        </Update>
+        <Update release="27">
+            <Date>2010-04-18</Date>
+            <Version>7.5_20100418</Version>
+            <Comment>
+                New releases:
+                - dri2proto-2.3
+                - glproto-1.4.11
+            </Comment>
+            <Name>Fatih Aşıcı</Name>
+            <Email>fatih@pardus.org.tr</Email>
+        </Update>
+        <Update release="26">
+            <Date>2009-12-08</Date>
+            <Version>7.5_20091208</Version>
+            <Comment>
+                New releases:
+                - bigreqsproto-1.1.0
+                - damageproto-1.2.0
+                - dmxproto-2.3
+                - fixesproto-4.1.1
+                - fontsproto-2.1.0
+                - inputproto-2.0
+                - recordproto-1.14
+                - renderproto-0.11
+                - resourceproto-1.1.0
+                - scrnsaverproto-1.2.0
+                - videoproto-2.3.0
+                - xcmiscproto-1.2.0
+                - xextproto-7.1.1
+                - xf86bigfontproto-1.2.0
+                - xf86dgaproto-2.1
+                - xf86driproto-2.1.0
+                - xf86vidmodeproto-2.3
+                - xineramaproto-1.2
+            </Comment>
+            <Name>Fatih Aşıcı</Name>
+            <Email>fatih@pardus.org.tr</Email>
+        </Update>
+        <Update release="25">
+            <Date>2009-10-13</Date>
+            <Version>7.5_20091013</Version>
+            <Comment>
+                - Added: vncproto-20070501
+                - Bumped: compositeproto-0.4.1, kbproto-1.0.4, randrproto-1.3.1, rstart-1.0.3, xmag-1.0.3, xproto-7.0.16, xproxymanagementprotocol-1.0.3
+            </Comment>
+            <Name>Fatih Aşıcı</Name>
+            <Email>fatih@pardus.org.tr</Email>
+        </Update>
+        <Update release="24">
+            <Date>2009-07-05</Date>
+            <Version>7.5_20090705</Version>
+            <Comment>Bumped: inputproto-1.5.1</Comment>
+            <Name>Fatih Aşıcı</Name>
+            <Email>fatih@pardus.org.tr</Email>
+        </Update>
+        <Update release="23">
+            <Date>2009-06-12</Date>
+            <Version>7.5_20090612</Version>
+            <Comment>Bumped: dri2proto-2.1</Comment>
+            <Name>Fatih Aşıcı</Name>
+            <Email>fatih@pardus.org.tr</Email>
+        </Update>
+        <Update release="22">
+            <Date>2009-06-06</Date>
+            <Version>7.5_20090606</Version>
+            <Comment>Bumped: glproto-1.4.10</Comment>
+            <Name>Fatih Aşıcı</Name>
+            <Email>fatih@pardus.org.tr</Email>
+        </Update>
+        <Update release="21">
+            <Date>2009-04-30</Date>
+            <Version>7.5_20090430</Version>
+            <Comment>Bumped: dri2proto-2.0</Comment>
+            <Name>Fatih Aşıcı</Name>
+            <Email>fatih@pardus.org.tr</Email>
+        </Update>
+        <Update release="20">
+            <Date>2009-03-06</Date>
+            <Version>7.5_20090306</Version>
+            <Comment>Bumped: randrproto-1.3.0, xproto-7.0.15</Comment>
+            <Name>Fatih Aşıcı</Name>
+            <Email>fatih@pardus.org.tr</Email>
+        </Update>
+        <Update release="19">
+            <Date>2009-02-25</Date>
+            <Version>7.5_20090225</Version>
+            <Comment>Bumped: randrproto-1.2.99.4</Comment>
+            <Name>Fatih Aşıcı</Name>
+            <Email>fatih@pardus.org.tr</Email>
+        </Update>
+        <Update release="18">
+            <Date>2009-02-09</Date>
+            <Version>7.5_20090209</Version>
+            <Comment>Bumped: xextproto-7.0.5</Comment>
+            <Name>Fatih Aşıcı</Name>
+            <Email>fatih@pardus.org.tr</Email>
+        </Update>
+        <Update release="17">
+            <Date>2008-12-18</Date>
+            <Version>7.5_20081218</Version>
+            <Comment>Bumped: xextproto-7.0.4. Dropped evieext and xf86miscproto.</Comment>
+            <Name>Fatih Aşıcı</Name>
+            <Email>fatih@pardus.org.tr</Email>
+        </Update>
+        <Update release="16">
+            <Date>2008-12-13</Date>
+            <Version>7.5_20081213</Version>
+            <Comment>Bumped: randrproto-1.2.99.3</Comment>
+            <Name>Fatih Aşıcı</Name>
+            <Email>fatih@pardus.org.tr</Email>
+        </Update>
+        <Update release="15">
+            <Date>2008-12-03</Date>
+            <Version>7.5_20081203</Version>
+            <Comment>
+                * Bumped package version to 7.5.
+                * Added dri2proto-1.99.3 required by new xserver.
+                * Bumped protocols:
+                  - inputproto-1.5.0
+                  - randrproto-1.2.99.1
+                  - xf86driproto-2.0.4
+                  - xproto-7.0.14
+                * Dropped protocols:
+                  - fontcacheproto
+                  - printproto
+                  - trapproto
+                  - xf86rushproto
+            </Comment>
+            <Name>Fatih Aşıcı</Name>
+            <Email>fatih@pardus.org.tr</Email>
+        </Update>
+        <Update release="14">
+            <Date>2008-07-04</Date>
+            <Version>7.3</Version>
+            <Comment>Bumped: randrproto-1.2.2, xextproto-7.0.3, xproto-7.0.13</Comment>
+            <Name>Fatih Aşıcı</Name>
+            <Email>fatih@pardus.org.tr</Email>
+        </Update>
+        <Update release="13">
+            <Date>2008-03-27</Date>
+            <Version>7.3</Version>
+            <Comment>Fix inputproto patch.</Comment>
+            <Name>Fatih Aşıcı</Name>
+            <Email>fatih@pardus.org.tr</Email>
+        </Update>
+        <Update release="12">
+            <Date>2008-03-07</Date>
+            <Version>7.3</Version>
+            <Comment>Bump: inputproto-1.4.3, printproto-1.0.4, xproto-7.0.12</Comment>
+            <Name>Fatih Aşıcı</Name>
+            <Email>fatih@pardus.org.tr</Email>
+        </Update>
+        <Update release="11">
+            <Date>2008-01-31</Date>
+            <Version>7.3</Version>
+            <Comment>applewmproto and windowswmproto removed as they are not used</Comment>
+            <Name>Fatih Aşıcı</Name>
+            <Email>fatih@pardus.org.tr</Email>
+        </Update>
+        <Update release="10">
+            <Date>2007-09-11</Date>
+            <Version>7.2</Version>
+            <Comment>inputproto-1.4.2.1, renderproto-0.9.3, xf86dgaproto-2.0.3, xproto-7.0.11</Comment>
+            <Name>S.Çağlar Onur</Name>
+            <Email>caglar@pardus.org.tr</Email>
+        </Update>
+        <Update release="9">
+            <Date>2007-07-13</Date>
+            <Version>7.2</Version>
+            <Comment>Tarball correction and grab inputproto patch from OpenSuse</Comment>
+            <Name>S.Çağlar Onur</Name>
+            <Email>caglar@pardus.org.tr</Email>
+        </Update>
+        <Update release="8">
+            <Date>2007-07-09</Date>
+            <Version>7.2</Version>
+            <Comment>compositeproto-0.4.0, inputproto-1.4.2</Comment>
+            <Name>S.Çağlar Onur</Name>
+            <Email>caglar@pardus.org.tr</Email>
+        </Update>
+        <Update release="7">
+            <Date>2007-03-28</Date>
+            <Version>7.2</Version>
+            <Comment>inputproto reverted to 1.3.2</Comment>
+            <Name>S.Çağlar Onur</Name>
+            <Email>caglar@pardus.org.tr</Email>
+        </Update>
+        <Update release="6">
+            <Date>2007-03-28</Date>
+            <Version>7.2</Version>
+            <Comment>Update inputproto</Comment>
+            <Name>S.Çağlar Onur</Name>
+            <Email>caglar@pardus.org.tr</Email>
+        </Update>
+        <Update release="5">
+            <Date>2007-02-22</Date>
+            <Version>7.2</Version>
+            <Comment>Update randr-1.2</Comment>
+            <Name>S.Çağlar Onur</Name>
+            <Email>caglar@pardus.org.tr</Email>
+        </Update>
+        <Update release="4">
+            <Date>2007-01-18</Date>
+            <Version>7.2_rc3</Version>
+            <Comment>Update damageproto</Comment>
+            <Name>S.Çağlar Onur</Name>
+            <Email>caglar@pardus.org.tr</Email>
+        </Update>
+        <Update release="3">
+            <Date>2006-12-19</Date>
+            <Version>7.2_rc3</Version>
+            <Comment>Version bump</Comment>
+            <Name>S.Çağlar Onur</Name>
+            <Email>caglar@pardus.org.tr</Email>
+        </Update>
+        <Update release="2">
+            <Date>2006-11-06</Date>
+            <Version>7.2_rc1</Version>
+            <Comment>Version bump</Comment>
+            <Name>S.Çağlar Onur</Name>
+            <Email>caglar@pardus.org.tr</Email>
+        </Update>
+        <Update release="1">
+            <Date>2006-09-19</Date>
+            <Version>7.1</Version>
+            <Comment>First release.</Comment>
+            <Name>S.Çağlar Onur</Name>
+            <Email>caglar@pardus.org.tr</Email>
+        </Update>
+    </History>
+</PISI>

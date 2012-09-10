@@ -1,0 +1,13 @@
+<?xml version="1.0" ?>
+<PISI>
+    <Source>
+        <Name>libiconv</Name>
+        <Summary xml:lang="en">text is often encoded using a language or country dependent character encoding.</Summary>
+        <Description xml:lang="en">For historical reasons, international text is often encoded using a language or country dependent character encoding.</Description>
+    </Source>
+    
+    <Package>
+        <Name>libiconv-devel</Name>
+        <Summary xml:lang="tr">libiconv için geliştirme dosyaları</Summary>
+    </Package>
+</PISI>
