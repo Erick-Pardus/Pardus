@@ -1,0 +1,87 @@
+<?xml version="1.0" ?>
+<!DOCTYPE PISI SYSTEM "http://www.pardus.org.tr/projeler/pisi/pisi-spec.dtd">
+<PISI>
+    <Source>
+        <Name>kate</Name>
+        <Homepage>http://www.kde.org/applications/utilities/kate</Homepage>
+        <Packager>
+            <Name>Gökmen Göksel</Name>
+            <Email>gokmen@pardus.org.tr</Email>
+        </Packager>
+        <License>GPLv2</License>
+        <IsA>app:gui</IsA>
+        <Summary>KDE4 text editor</Summary>
+        <Description>Kate is a multi-document, multi-view text editor for KDE. It features stuff like codefolding, syntaxhighlighting, dynamic word wrap, an embedded console, an extensive plugin interface and some prelimentary scripting support.</Description>
+        <Archive type="tarxz" sha1sum="6bf4796574a003a4edadfb2029725805235bd086">mirrors://kde/stable/4.8.2/src/kate-4.8.2.tar.xz</Archive>
+        <BuildDependencies>
+            <Dependency versionFrom="4.8.1">qt-devel</Dependency>
+            <Dependency versionFrom="4.8.2">kdelibs-devel</Dependency>
+        </BuildDependencies>
+    </Source>
+
+    <Package>
+        <Name>kate</Name>
+        <RuntimeDependencies>
+            <Dependency versionFrom="4.8.1">qt</Dependency>
+            <Dependency versionFrom="4.8.2">kdelibs</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="executable">/usr/bin/kate</Path>
+            <Path fileType="executable">/usr/bin/ktesnippets_editor</Path>
+            <Path fileType="library">/usr/lib</Path>
+            <Path fileType="data">/usr/share/kde4/apps/kate*</Path>
+            <Path fileType="data">/usr/share/kde4/apps/kconf_update</Path>
+            <Path fileType="data">/usr/share/kde4/apps/ktexteditor*</Path>
+            <Path fileType="data">/usr/share/kde4/servicetypes</Path>
+            <Path fileType="data">/usr/share/kde4/services</Path>
+            <Path fileType="data">/usr/share/kde4/config</Path>
+            <Path fileType="data">/usr/share/icons</Path>
+            <Path fileType="data">/usr/share/applications/kde4/kate.desktop</Path>
+            <Path fileType="data">/usr/share/applications/kde4/ktesnippets_editor.desktop</Path>
+            <Path fileType="data">/usr/share/mime</Path>
+            <Path fileType="man">/usr/share/man</Path>
+            <Path fileType="doc">/usr/share/doc</Path>
+        </Files>
+    </Package>
+
+    <Package>
+        <Name>kwrite</Name>
+        <Summary>A text editor for KDE</Summary>
+        <Description>KWrite is a text editor for KDE, based on the Kate's editor component.</Description>
+        <RuntimeDependencies>
+            <Dependency versionFrom="4.8.1">qt</Dependency>
+            <Dependency versionFrom="4.8.2">kdelibs</Dependency>
+            <Dependency versionFrom="4.8.2">kate</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="executable">/usr/bin/kwrite</Path>
+            <Path fileType="library">/usr/lib/libkdeinit4_kwrite.so</Path>
+            <Path fileType="data">/usr/share/kde4/apps/kwrite</Path>
+            <Path fileType="data">/usr/share/applications/kde4/kwrite.desktop</Path>
+            <Path fileType="doc">/usr/share/doc/kde4/html/en/kwrite</Path>
+        </Files>
+    </Package>
+
+    <Package>
+        <Name>kate-devel</Name>
+        <Summary>Development files for kate</Summary>
+        <RuntimeDependencies>
+            <Dependency versionFrom="4.8.1">qt</Dependency>
+            <Dependency versionFrom="4.8.2">kdelibs</Dependency>
+            <Dependency versionFrom="4.8.2">kate</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="header">/usr/include</Path>
+        </Files>
+    </Package>
+
+    <History>
+        <Update release="1">
+            <Date>2012-04-06</Date>
+            <Version>4.8.2</Version>
+            <Comment>First Release</Comment>
+            <Name>Gökmen Göksel</Name>
+            <Email>gokmen@pardus.org.tr</Email>
+        </Update>
+    </History>
+</PISI>

@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<!DOCTYPE PISI SYSTEM "http://www.pardus.org.tr/projeler/pisi/pisi-spec.dtd">
+<PISI>
+    <Source>
+        <Name>geany-plugins</Name>
+        <Homepage>http://plugins.geany.org/geany-plugins/</Homepage>
+        <Packager>
+            <Name>Erdem Artan</Name>
+            <Email>erdem.artan@linux.org.tr</Email>
+        </Packager>
+        <License>GPLv2</License>
+        <IsA>addon</IsA>
+        <Summary>A collection of different plugins for Geany</Summary>
+        <Description>A collection of different plugins for Geany</Description>        
+        <Archive sha1sum="d8d0e196472c7e74d2c38560020982143590e418" type="tarbz2">http://plugins.geany.org/geany-plugins/geany-plugins-1.22.tar.bz2</Archive>
+        <BuildDependencies>
+            <Dependency version="1.22">geany</Dependency>
+            <Dependency>libxml2-devel</Dependency>
+            <Dependency>enchant-devel</Dependency>
+            <Dependency>gtkspell-devel</Dependency>
+	    <Dependency>gpgme-devel</Dependency>
+            <Dependency>lua-devel</Dependency>
+            <Dependency>webkit-gtk-devel</Dependency>
+            <Dependency>libsoup-devel</Dependency>
+            <Dependency>gettext</Dependency>
+            <Dependency>pkgconfig</Dependency>
+        </BuildDependencies>
+    </Source>
+
+    <Package>
+     <Name>geany-plugins</Name>
+        <RuntimeDependencies>
+            <Dependency version="1.22">geany</Dependency>
+            <Dependency>libxml2</Dependency>
+            <Dependency>enchant</Dependency>
+            <Dependency>gtkspell</Dependency>
+            <Dependency>lua</Dependency>
+            <Dependency>webkit-gtk</Dependency>
+            <Dependency>libsoup</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="localedata">/usr/share/locale</Path>
+            <Path fileType="library">/usr/lib/geany</Path>
+            <Path fileType="library">/usr/libexec/geany-plugins</Path>
+            <Path fileType="library">/usr/lib/geany-plugins</Path>
+            <Path fileType="library">/usr/share/doc/geany-plugins</Path>
+            <Path fileType="library">/usr/share/geany-plugins</Path>
+            <Path fileType="data">/usr/share/icons</Path>
+        </Files>
+    </Package>
+    <History>
+        <Update release="3">
+            <Date>2012-09-01</Date>
+            <Version>1.22</Version>
+            <Comment>v.bump</Comment>
+            <Name>Osman Erkan</Name>
+            <Email>namso-01@hotmail.it</Email>
+        </Update>
+        <Update release="2">
+            <Date>2011-11-24</Date>
+            <Version>0.21</Version>
+            <Comment>Version bump</Comment>
+            <Email>erdem.artan@linux.org.tr</Email>
+            <Name>Erdem Artan</Name>    
+        </Update>
+        <Update release="1">
+            <Date>2011-02-06</Date>
+            <Version>0.20</Version>
+            <Comment>First release</Comment>
+            <Email>erdem.artan@linux.org.tr</Email>
+            <Name>Erdem Artan</Name>    
+        </Update>
+    </History>
+</PISI>
+

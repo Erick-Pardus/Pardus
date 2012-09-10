@@ -1,0 +1,54 @@
+<PISI>
+    <Source>
+        <Name>cb2bib</Name>
+        <Homepage>http://www.molspaces.com/cb2bib/</Homepage>
+        <Packager>
+            <Name>Osman Erkan</Name>
+            <Email>namso-01@hotmail.it</Email>
+        </Packager>
+        <License>GPLv3</License>
+        <PartOf>office.misc</PartOf>
+        <IsA>app:gui</IsA>
+        <Summary>Bibliyografik Kaynakça Çıkarma Aracı.</Summary>
+        <Description>Cb2Bib hızla biçimlendirilmemiş veya e-posta uyarıları, dergi Web sayfaları ve PDF dosyaları üretiminin standartlaştırılmış olmamasından bibliyografik referanslar ayıklanması için bir açık kaynak ve multiplatform bir uygulamasıdır.</Description>
+
+        <Archive sha1sum="a73b7141c270a1e91911c1a104db3cecb3bce9fe" type="targz">http://www.molspaces.com/dl/progs/cb2bib-1.4.8.tar.gz</Archive>
+
+        <BuildDependencies>
+            <Dependency>lzo-devel</Dependency>
+            <Dependency>qt-devel</Dependency>
+            <Dependency>libX11-devel</Dependency>
+        </BuildDependencies>
+
+    </Source>
+    <Package>
+        <Name>cb2bib</Name>
+        <RuntimeDependencies>
+            <Dependency>lzo</Dependency>
+            <Dependency>qt</Dependency>
+            <Dependency>libX11</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="executable">/usr/bin</Path>
+            <Path fileType="data">/usr/share/applications</Path>
+            <Path fileType="data">/usr/share/pixmaps</Path>
+            <Path fileType="data">/usr/share/cb2bib</Path>
+        </Files>
+
+        <AdditionalFiles>
+            <AdditionalFile owner="root" permission="0644" target="/usr/share/applications/c2bciter.desktop">c2bciter.desktop</AdditionalFile>
+            <AdditionalFile owner="root" permission="0644" target="/usr/share/applications/c2bimport.desktop">c2bimport.desktop</AdditionalFile>
+            <AdditionalFile owner="root" permission="0644" target="/usr/share/applications/cb2bib.desktop">cb2bib.desktop</AdditionalFile>
+        </AdditionalFiles>
+
+    </Package>
+    <History>
+        <Update release="1">
+            <Date>2012-08-11</Date>
+            <Version>1.4.8</Version>
+            <Comment>First Release</Comment>
+            <Name>Osman Erkan</Name>
+            <Email>namso-01@hotmail.it</Email>
+        </Update>
+    </History>
+</PISI>

@@ -1,0 +1,54 @@
+<PISI>
+    <Source>
+        <Name>kbibtex</Name>
+        <Homepage>http://home.gna.org/kbibtex/</Homepage>
+        <Packager>
+            <Name>Osman Erkan</Name>
+            <Email>namso-01@hotmail.it</Email>
+        </Packager>
+        <License>GPLv2</License>
+        <PartOf>office.misc</PartOf>
+        <IsA>app:gui</IsA>
+        <Summary>Latex ile kullanılan bir KDE bibTex editörüdür.</Summary>
+        <Description>Kbibtex, bilimsel makale arşivlerini düzenlemek, kapsamlı arama yapmak ve bib dosyaları oluşturma ve düzenlemede büyük kolaylık sağlayabilecek bir programdır.</Description>
+
+        <Archive sha1sum="8fc4bee65880a9d7a2552630001b1a4767622105" type="tarbz2">http://download.gna.org/kbibtex/0.4/kbibtex-0.4.1-rc1.tar.bz2</Archive>
+
+        <BuildDependencies>
+            <Dependency>kdelibs-devel</Dependency>
+            <Dependency>libXpm-devel</Dependency>
+            <Dependency>poppler-qt-devel</Dependency>
+        </BuildDependencies>
+
+    </Source>
+    <Package>
+        <Name>kbibtex</Name>
+        <RuntimeDependencies>
+            <Dependency>kdelibs</Dependency>
+            <Dependency>libXpm</Dependency>
+            <Dependency>poppler-qt</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="executable">/usr/bin</Path>
+            <Path fileType="library">/usr/lib</Path>
+            <Path fileType="data">/usr/share/applications</Path>
+            <Path fileType="data">/usr/share/icons</Path>
+            <Path fileType="data">/usr/share/kde4</Path>
+            <Path fileType="data">/usr/share/mime</Path>
+            <Path fileType="man">/usr/share/man</Path>
+        </Files>
+
+        <AdditionalFiles>
+            <AdditionalFile owner="root" permission="0644" target="/usr/share/applications/kde4/kbibtex.desktop">kbibtex.desktop</AdditionalFile>
+	</AdditionalFiles>
+    </Package>
+    <History>
+        <Update release="1">
+            <Date>2012-08-11</Date>
+            <Version>0.4.1</Version>
+            <Comment>First Release</Comment>
+            <Name>Osman Erkan</Name>
+            <Email>namso-01@hotmail.it</Email>
+        </Update>
+    </History>
+</PISI>

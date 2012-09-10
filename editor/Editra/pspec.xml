@@ -1,0 +1,60 @@
+<PISI>
+    <Source>
+        <Name>Editra</Name>
+        <Homepage>http://editra.org/</Homepage>
+        <Packager>
+            <Name>Osman Erkan</Name>
+            <Email>namso-01@hotmail.it</Email>
+        </Packager>
+        <License>wxWinLL-3.1</License>
+        <License>wxWindows</License>
+        <PartOf>office.misc</PartOf>
+        <IsA>app:gui</IsA>
+        <Summary>Programlama editörü.</Summary>
+        <Description>Editra 60 farklı programlama dilini destekleyen, ekstra özellikli bir programlama editörüdür.</Description>
+
+        <Archive sha1sum="f2e7b441139a012e332bb3fd3a4dbbf41cd2b507" type="targz">http://editra.googlecode.com/files/Editra-0.7.12.tar.gz</Archive>
+
+        <BuildDependencies>
+            <Dependency>wxPython-devel</Dependency>
+            <Dependency>desktop-file-utils</Dependency>
+        </BuildDependencies>
+    </Source>
+
+    <Package>
+        <Name>Editra</Name>
+        <RuntimeDependencies>
+            <Dependency>wxPython</Dependency>
+            <Dependency>desktop-file-utils</Dependency>
+            <Dependency>python-setuptools</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="executable">/usr/bin</Path>
+            <Path fileType="library">/usr/lib</Path>
+            <Path fileType="doc">/usr/share/doc</Path>
+            <Path fileType="data">/usr/share/applications</Path>
+        </Files>
+
+        <AdditionalFiles>
+            <AdditionalFile owner="root" permission="0644" target="/usr/share/applications/editra.desktop">editra.desktop</AdditionalFile>
+        </AdditionalFiles>
+
+    </Package>
+
+    <History>
+        <Update release="2">
+            <Date>2012-08-22</Date>
+            <Version>7.12</Version>
+            <Comment>v.bump</Comment>
+            <Name>Osman Erkan</Name>
+            <Email>namso-01@hotmail.it</Email>
+        </Update>
+        <Update release="1">
+            <Date>2012-08-12</Date>
+            <Version>7.08</Version>
+            <Comment>First Release</Comment>
+            <Name>Osman Erkan</Name>
+            <Email>namso-01@hotmail.it</Email>
+        </Update>
+    </History>
+</PISI>
