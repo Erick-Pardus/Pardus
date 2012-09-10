@@ -1,0 +1,141 @@
+<?xml version="1.0" ?>
+<!DOCTYPE PISI SYSTEM "http://www.pardus.org.tr/projeler/pisi/pisi-spec.dtd">
+<PISI>
+    <Source>
+        <Name>httrack</Name>
+        <Homepage>http://www.httrack.com/</Homepage>
+        <Packager>
+            <Name>Doruk Fişek</Name>
+            <Email>dfisek@fisek.com.tr</Email>
+        </Packager>
+        <License>GPLv2</License>
+        <Icon>httrack</Icon>
+        <IsA>app:gui</IsA>
+        <IsA>app:console</IsA>
+        <Summary>A website copier and offline browser utility</Summary>
+        <Description>HTTrack allows you to download a web site from the Internet to a local directory, building recursively all directories; getting HTML, images, and other files from the server to your computer. HTTrack arranges the original site's relative link-structure. Simply opening a page of the "mirrored" website in your browser, and you can browse the site from link to link, as if you were viewing it online. HTTrack can also update an existing mirrored site, and resume interrupted downloads.</Description>
+        <Archive sha1sum="be6328d2ff3cbabd21426b7acc54edcf1ebb76e0" type="targz">http://download.httrack.com/httrack-3.46.1.tar.gz</Archive>
+        <BuildDependencies>
+            <Dependency>dos2unix</Dependency>
+            <Dependency>desktop-file-utils</Dependency>
+        </BuildDependencies>
+        <Patches>
+            <Patch level="1">utf-8.patch</Patch>
+        </Patches>
+    </Source>
+
+    <Package>
+        <Name>httrack</Name>
+        <RuntimeDependencies>
+            <Dependency>dos2unix</Dependency>
+            <Dependency>desktop-file-utils</Dependency>
+            <Dependency>xdg-utils</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="executable">/usr/bin</Path>
+            <Path fileType="library">/usr/lib</Path>
+            <Path fileType="data">/usr/share</Path>
+            <Path fileType="doc">/usr/share/doc/httrack</Path>
+            <Path fileType="man">/usr/share/man</Path>
+        </Files>
+    </Package>
+
+    <Package>
+        <Name>httrack-devel</Name>
+        <IsA>library</IsA>
+        <Summary>Development files for httrack</Summary>
+        <RuntimeDependencies>
+            <Dependency release="current">httrack</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="header">/usr/include</Path>
+        </Files>
+    </Package>
+
+    <History>
+        <Update release="16">
+            <Date>2012-09-01</Date>
+            <Version>3.46.1</Version>
+            <Comment>v.bump</Comment>
+            <Name>Osman Erkan</Name>
+            <Email>namso-01@hotmail.it</Email>
+        </Update>
+        <Update release="11">
+            <Date>2011-07-17</Date>
+            <Version>3.44.1</Version>
+            <Comment>Pardus 2011</Comment>
+            <Name>Erdem Artan</Name>
+            <Email>erdem.artan@linux.org.tr</Email>
+        </Update>
+        <Update release="10">
+            <Date>2011-05-28</Date>
+            <Version>3.44.1</Version>
+            <Comment>Version bump</Comment>
+            <Name>Recep Kırmızı</Name>
+            <Email>rkirmizi@fisek.com.tr</Email>
+        </Update>
+        <Update release="9">
+            <Date>2011-02-26</Date>
+            <Version>3.43.12</Version>
+            <Comment>Fix icon, more generic -devel dep, add extra isa tag.</Comment>
+            <Name>Doruk Fişek</Name>
+            <Email>dfisek@fisek.com.tr</Email>
+        </Update>
+        <Update release="8">
+            <Date>2011-01-09</Date>
+            <Version>3.43.12</Version>
+            <Comment>Version bump</Comment>
+            <Name>Necdet Yücel</Name>
+            <Email>necdetyucel@gmail.com</Email>
+        </Update>
+        <Update release="7">
+            <Date>2010-10-16</Date>
+            <Version>3.43.9</Version>
+            <Comment>Split headers</Comment>
+            <Name>Necdet Yücel</Name>
+            <Email>necdetyucel@gmail.com</Email>
+        </Update>
+        <Update release="6">
+            <Date>2010-06-14</Date>
+            <Version>3.43.9</Version>
+            <Comment>Version bump.</Comment>
+            <Name>Necdet Yücel</Name>
+            <Email>necdetyucel@gmail.com</Email>
+        </Update>
+        <Update release="5">
+            <Date>2009-08-16</Date>
+            <Version>3.43.7</Version>
+            <Comment>Bump to new bugfix release.</Comment>
+            <Name>İnanç Yıldırgan</Name>
+            <Email>inancyildirgan@gmail.com</Email>
+        </Update>
+        <Update release="4">
+            <Date>2009-02-09</Date>
+            <Version>3.43.2</Version>
+            <Comment>Stable update.</Comment>
+            <Name>İnanç Yıldırgan</Name>
+            <Email>inancyildirgan@gmail.com</Email>
+        </Update>
+        <Update release="3">
+            <Date>2008-10-15</Date>
+            <Version>3.43</Version>
+            <Comment>Stable update.</Comment>
+            <Name>İnanç Yıldırgan</Name>
+            <Email>inancyildirgan@gmail.com</Email>
+        </Update>
+        <Update release="2" type="security">
+            <Date>2008-08-05</Date>
+            <Version>3.42.3</Version>
+            <Comment>Fix buffer overflow: CVE-2008-3429</Comment>
+            <Name>Pınar Yanardağ</Name>
+            <Email>pinar@pardus.org.tr</Email>
+        </Update>
+        <Update release="1">
+            <Date>2008-06-15</Date>
+            <Version>3.42.2</Version>
+            <Comment>First release.</Comment>
+            <Name>İnanç Yıldırgan</Name>
+            <Email>inancyildirgan@gmail.com</Email>
+        </Update>
+    </History>
+</PISI>

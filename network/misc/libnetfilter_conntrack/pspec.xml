@@ -1,0 +1,81 @@
+<?xml version="1.0" ?>
+<!DOCTYPE PISI SYSTEM "http://www.pardus.org.tr/projeler/pisi/pisi-spec.dtd">
+<PISI>
+    <Source>
+        <Name>libnetfilter_conntrack</Name>
+        <Homepage>http://www.netfilter.org</Homepage>
+        <Packager>
+            <Name>Mehmet Özdemir</Name>
+            <Email>mehmet@pardus.org.tr</Email>
+        </Packager>
+        <License>GPLv2</License>
+        <IsA>library</IsA>
+        <Summary>Connection tracking system API</Summary>
+        <Description>Libnetfilter-conntrack is a userspace library providing API to the in-kernel connection tracking system.</Description>
+        <Archive sha1sum="82ff80fc48d3f12b6c5bd66d207e95dfab152025" type="tarbz2">http://netfilter.org/projects/libnetfilter_conntrack/files/libnetfilter_conntrack-1.0.1.tar.bz2</Archive>
+        <BuildDependencies>
+            <Dependency>libnfnetlink-devel</Dependency>
+        </BuildDependencies>
+    </Source>
+
+    <Package>
+        <Name>libnetfilter_conntrack</Name>
+        <RuntimeDependencies>
+            <Dependency>libnfnetlink</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="library">/usr/lib</Path>
+        </Files>
+    </Package>
+
+    <Package>
+        <Name>libnetfilter_conntrack-devel</Name>
+        <Summary>Development files for libnetfilter_conntrack</Summary>
+        <RuntimeDependencies>
+            <Dependency release="current">libnetfilter_conntrack</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="header">/usr/include</Path>
+            <Path fileType="library">/usr/lib/pkgconfig/libnetfilter_conntrack.pc</Path>
+        </Files>
+    </Package>
+
+    <History>
+        <Update release="5">
+            <Date>2012-09-01</Date>
+            <Version>1.0.1</Version>
+            <Comment>v.bump</Comment>
+            <Name>Osman Erkan</Name>
+            <Email>namso-01@hotmail.it</Email>
+        </Update>
+        <Update release="4">
+            <Date>2011-08-03</Date>
+            <Version>0.9.1</Version>
+            <Comment>Rebuild for devel part.</Comment>
+            <Name>Mehmet Özdemir</Name>
+            <Email>mehmet@pardus.org.tr</Email>
+        </Update>
+        <Update release="3">
+            <Date>2011-08-01</Date>
+            <Version>0.9.1</Version>
+            <Comment>New release.</Comment>
+            <Name>Mehmet Özdemir</Name>
+            <Email>mehmet@pardus.org.tr</Email>
+        </Update>
+        <Update release="2">
+            <Date>2011-01-10</Date>
+            <Version>0.0.102</Version>
+            <Comment>New release.</Comment>
+            <Name>Bahadır Kandemir</Name>
+            <Email>bahadir@pardus.org.tr</Email>
+        </Update>
+        <Update release="1">
+            <Date>2010-01-21</Date>
+            <Version>0.0.101</Version>
+            <Comment>First release.</Comment>
+            <Name>Bahadır Kandemir</Name>
+            <Email>bahadir@pardus.org.tr</Email>
+        </Update>
+    </History>
+</PISI>
+

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE PISI SYSTEM "http://www.pardus.org.tr/projeler/pisi/pisi-spec.dtd">
+<PISI>
+    <Source>
+        <Name>dropbox</Name>
+        <Homepage>http://www.dropbox.com</Homepage>
+        <Packager>
+            <Name>Osman Erkan</Name>
+            <Email>namso-01@hotmail.it</Email>
+        </Packager>
+        <License>as-is</License>
+        <License>MIT</License>
+        <License>GPLv2</License>
+        <License>LGPLv2.1</License>
+        <!-- http://forums.dropbox.com/topic.php?id=31357 -->
+        <Icon>dropbox</Icon>
+        <IsA>app:gui</IsA>
+        <Summary>A Dropbox client</Summary>
+        <Description>Dropbox is a Web-based file hosting service which uses cloud computing to enable users to store and share files and folders with others across the Internet using file synchronization.</Description>
+        <Archive sha1sum="25e567663d5db424a8709491a66b643f36db2c03" type="targz" target="i686">http://dl-web.dropbox.com/u/17/dropbox-lnx.x86-1.5.2.tar.gz</Archive>
+        <Archive sha1sum="c7cbcb3d2f9cbc23446ec405b274a6c9a6563b4a" type="targz" target="x86_64">http://dl-web.dropbox.com/u/17/dropbox-lnx.x86_64-1.5.2.tar.gz</Archive>
+        <Archive sha1sum="2d8868de60c696c7aa3663750c388a96c4622ebc" type="targz" target="hede">http://kde-look.org/CONTENT/content-files/141519-dropbox-icons.tar.gz</Archive>
+    </Source>
+
+    <Package>
+        <Name>dropbox</Name>
+        <RuntimeDependencies>
+            <Dependency>atk</Dependency>
+            <Dependency>fontconfig</Dependency>
+            <Dependency>gdk-pixbuf</Dependency>
+            <Dependency>gtk2</Dependency>
+            <Dependency>libSM</Dependency>
+            <Dependency>libXcomposite</Dependency>
+            <Dependency>libXcursor</Dependency>
+            <Dependency>libXdamage</Dependency>
+            <Dependency>libXext</Dependency>
+            <Dependency>libXfixes</Dependency>
+            <Dependency>libXi</Dependency>
+            <Dependency>libXinerama</Dependency>
+            <Dependency>libXrandr</Dependency>
+            <Dependency>libXrender</Dependency>
+            <Dependency>pango</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="executable">/opt/dropbox</Path>
+            <Path fileType="data">/usr/share/applications</Path>
+            <Path fileType="data">/usr/share/pixmaps</Path>
+            <Path fileType="doc">/usr/share/doc</Path>
+        </Files>
+        <AdditionalFiles>
+            <AdditionalFile owner="root" permission="0644" target="/usr/share/applications/dropbox.desktop">dropbox.desktop</AdditionalFile>
+            <AdditionalFile owner="root" permission="0644" target="/usr/share/pixmaps/dropbox.png">dropbox.png</AdditionalFile>
+            <AdditionalFile owner="root" permission="0644" target="/usr/share/doc/dropbox/POLICIES">POLICIES</AdditionalFile>
+        </AdditionalFiles>
+    </Package>
+
+    <History>
+         <Update release="2">
+            <Date>2012-02-05</Date>
+            <Version>1.5.2</Version>
+            <Comment>New version</Comment>
+            <Name>Osman Erkan</Name>
+            <Email>namso-01@hotmail.it</Email>
+        </Update>
+        <Update release="1">
+            <Date>2011-12-23</Date>
+            <Version>1.2.49</Version>
+            <Comment>First release.</Comment>
+            <Name>Anıl Özbek</Name>
+            <Email>ozbekanil@gmail.com</Email>
+        </Update>
+    </History>
+</PISI>

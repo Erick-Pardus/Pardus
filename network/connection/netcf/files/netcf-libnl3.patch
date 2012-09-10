@@ -1,0 +1,140 @@
+diff -urN netcf-0.1.7-orig/configure.ac netcf-0.1.7-new/configure.ac
+--- netcf-0.1.7-orig/configure.ac	2010-09-24 16:50:44.000000000 +0200
++++ netcf-0.1.7-new/configure.ac	2012-05-16 20:54:19.379821775 +0200
+@@ -32,11 +32,12 @@
+ PKG_CHECK_MODULES([LIBXML], [libxml-2.0])
+ PKG_CHECK_MODULES([LIBXSLT], [libxslt])
+ PKG_CHECK_MODULES([LIBEXSLT], [libexslt])
+-PKG_CHECK_MODULES([LIBNL], [libnl-1])
++PKG_CHECK_MODULES([LIBNL], [libnl-3.0])
++PKG_CHECK_MODULES([LIBNL_ROUTE], [libnl-route-3.0])
+ 
+ NETCF_CHECK_READLINE
+ 
+-NETCF_LIBDEPS=$(echo $LIBAUGEAS_LIBS $LIBEXSLT_LIBS $LIBXSLT_LIBS $LIBXML_LIBS $LIBNL_LIBS)
++NETCF_LIBDEPS=$(echo $LIBAUGEAS_LIBS $LIBEXSLT_LIBS $LIBXSLT_LIBS $LIBXML_LIBS $LIBNL_LIBS $LIBNL_ROUTE_LIBS)
+ AC_SUBST([NETCF_LIBDEPS])
+ 
+ AC_CHECK_HEADER([pthread.h],
+diff -urN netcf-0.1.7-orig/src/Makefile.am netcf-0.1.7-new/src/Makefile.am
+--- netcf-0.1.7-orig/src/Makefile.am	2010-09-24 15:59:49.000000000 +0200
++++ netcf-0.1.7-new/src/Makefile.am	2012-05-16 20:54:19.379821775 +0200
+@@ -3,7 +3,8 @@
+ GNULIB_CFLAGS= -I $(top_srcdir)/gnulib/lib
+ 
+ AM_CFLAGS = $(NETCF_CFLAGS) $(GNULIB_CFLAGS) $(WARN_CFLAGS) \
+-  $(LIBXML_CFLAGS) $(LIBXSLT_CFLAGS) $(LIBAUGEAS_CFLAGS)
++  $(LIBNL_CFLAGS) $(LIBNL_ROUTE_CFLAGS) $(LIBXML_CFLAGS) \
++  $(LIBXSLT_CFLAGS) $(LIBAUGEAS_CFLAGS)
+ 
+ include_HEADERS = netcf.h
+
+diff -urN netcf-0.1.9-orig/src/dutil_linux.c netcf-0.1.9-new/src/dutil_linux.c
+--- netcf-0.1.9-orig/src/dutil_linux.c  2011-06-27 17:33:42.000000000 +0200
++++ netcf-0.1.9-new/src/dutil_linux.c   2012-05-16 21:59:28.616588236 +0200
+@@ -54,7 +54,6 @@
+ #include "dutil.h"
+ #include "dutil_linux.h"
+
+-#include <net/if.h>
+ #include <netlink/socket.h>
+ #include <netlink/cache.h>
+ #include <netlink/route/addr.h>
+@@ -705,21 +704,19 @@
+
+ int netlink_init(struct netcf *ncf) {
+
+-    ncf->driver->nl_sock = nl_handle_alloc();
++    ncf->driver->nl_sock = nl_socket_alloc();
+     if (ncf->driver->nl_sock == NULL)
+         goto error;
+     if (nl_connect(ncf->driver->nl_sock, NETLINK_ROUTE) < 0) {
+         goto error;
+     }
+
+-    ncf->driver->link_cache = rtnl_link_alloc_cache(ncf->driver->nl_sock);
+-    if (ncf->driver->link_cache == NULL) {
++    if (rtnl_link_alloc_cache(ncf->driver->nl_sock, AF_UNSPEC, &ncf->driver->link_cache) != 0) {
+         goto error;
+     }
+     nl_cache_mngt_provide(ncf->driver->link_cache);
+
+-    ncf->driver->addr_cache = rtnl_addr_alloc_cache(ncf->driver->nl_sock);
+-    if (ncf->driver->addr_cache == NULL) {
++    if (rtnl_addr_alloc_cache(ncf->driver->nl_sock, &ncf->driver->addr_cache) != 0) {
+         goto error;
+     }
+     nl_cache_mngt_provide(ncf->driver->addr_cache);
+@@ -746,7 +743,7 @@
+     }
+     if (ncf->driver->nl_sock) {
+         nl_close(ncf->driver->nl_sock);
+-        nl_handle_destroy(ncf->driver->nl_sock);
++        nl_socket_free(ncf->driver->nl_sock);
+         ncf->driver->nl_sock = NULL;
+     }
+     return 0;
+@@ -909,7 +906,7 @@
+     struct rtnl_link *filter_link = NULL;
+
+     /* if interface isn't currently available, nothing to add */
+-    if (ifindex != RTNL_LINK_NOT_FOUND)
++    if (ifindex != -1)
+         return;
+
+     filter_link = rtnl_link_alloc();
+@@ -950,12 +947,12 @@
+     if (cb_data->vlan != NULL)
+         return;
+
+-    link_type = rtnl_link_get_info_type(iflink);
++    link_type = rtnl_link_get_type(iflink);
+     if ((link_type == NULL) || STRNEQ(link_type, "vlan"))
+         return;
+
+     l_link = rtnl_link_get_link(iflink);
+-    if (l_link == RTNL_LINK_NOT_FOUND)
++    if (l_link == -1)
+         return;
+
+     master_link = rtnl_link_get(nl_object_get_cache(obj), l_link);
+@@ -980,7 +977,7 @@
+
+     /* Add in type-specific info of master interface */
+     master_ifindex = rtnl_link_name2i(ncf->driver->link_cache, master_name);
+-    ERR_THROW((master_ifindex == RTNL_LINK_NOT_FOUND), ncf, ENETLINK,
++    ERR_THROW((master_ifindex == -1), ncf, ENETLINK,
+               "couldn't find ifindex for vlan master interface `%s`",
+               master_name);
+     add_type_specific_info(ncf, master_name, master_ifindex,
+@@ -998,7 +995,7 @@
+     struct rtnl_link *filter_link = NULL;
+
+     /* if interface isn't currently available, nothing to add */
+-    if (ifindex != RTNL_LINK_NOT_FOUND)
++    if (ifindex != -1)
+         return;
+
+     filter_link = rtnl_link_alloc();
+@@ -1113,7 +1110,7 @@
+         = { doc, root, NULL, ifindex, ncf };
+
+     /* if interface isn't currently available, nothing to add */
+-    if (ifindex != RTNL_LINK_NOT_FOUND)
++    if (ifindex != -1)
+         return;
+
+     nl_cache_foreach(ncf->driver->link_cache, add_bond_info_cb, &cb_data);
+diff -urN netcf-0.1.9-orig/src/dutil_linux.h netcf-0.1.9-new/src/dutil_linux.h
+--- netcf-0.1.9-orig/src/dutil_linux.h  2011-05-26 20:35:05.000000000 +0200
++++ netcf-0.1.9-new/src/dutil_linux.h   2012-05-16 21:56:40.553254858 +0200
+@@ -30,7 +30,7 @@
+     xsltStylesheetPtr  put;
+     xsltStylesheetPtr  get;
+     int                ioctl_fd;
+-    struct nl_handle  *nl_sock;
++    struct nl_sock    *nl_sock;
+     struct nl_cache   *link_cache;
+     struct nl_cache   *addr_cache;
+     unsigned int       load_augeas : 1;
+

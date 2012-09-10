@@ -1,0 +1,62 @@
+<?xml version="1.0" ?>
+<!DOCTYPE PISI SYSTEM "http://www.pardus.org.tr/projeler/pisi/pisi-spec.dtd">
+<PISI>
+    <Source>
+        <Name>okularplugin</Name>
+        <Homepage>https://github.com/jeremysanders/okularplugin</Homepage>
+        <Packager>
+            <Name>Erdem Artan</Name>
+            <Email>erdem.artan@linux.org.tr</Email>
+        </Packager>
+        <License>GPLv2</License>
+        <IsA>plugin</IsA>
+        <Summary>Okular plugin for browsers to embed view of Okular inside browsers</Summary>
+        <Description>Okular plugin for browsers to embed view of Okular inside browsers</Description>
+        <Archive sha1sum="594f34f6b08c2fbc1009306ab287c34f019fa90d" type="targz">http://paketler.pardus-linux.org/sources/okularplugin.tar.gz</Archive>
+        <BuildDependencies>
+            <Dependency>kdelibs-devel</Dependency>
+            <Dependency>qt-devel</Dependency>
+            <Dependency>libX11-devel</Dependency>
+        </BuildDependencies>
+</Source>
+
+<Package>
+        <Name>okularplugin</Name>
+        <RuntimeDependencies>
+            <Dependency>qt</Dependency>
+            <Dependency>libX11</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="doc">/usr/share/doc</Path>
+            <Path fileType="library">/usr/lib</Path>
+            <Path fileType="library">/usr/share/kde4/apps/okularplugin</Path>
+            <Path fileType="library">/usr/lib/browser-plugins</Path>
+        </Files>
+</Package>
+
+    <History>
+        <Update release="3">
+            <Date>2012-05-23</Date>
+            <Version>1588330</Version>
+            <Comment>Rebuild</Comment>
+            <Name>Yusuf Aydemir</Name>
+            <Email>yusuf.aydemir@istanbul.com</Email>
+        </Update>
+        <Update release="2">
+            <Date>2011-03-07</Date>
+            <Version>1588330</Version>
+            <Comment>Fix wrong browser plugin dir</Comment>
+            <Name>Erdem Artan</Name>
+            <Email>erdem.artan@linux.org.tr</Email>
+        </Update>
+            <Update release="1">
+            <Date>2011-03-07</Date>
+            <Version>1588330</Version>
+            <Comment>First Release</Comment>
+            <Name>Erdem Artan</Name>
+            <Email>erdem.artan@linux.org.tr</Email>
+        </Update>
+    </History>
+</PISI>
+ 
+ 

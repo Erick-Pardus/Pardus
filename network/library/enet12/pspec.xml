@@ -1,0 +1,76 @@
+<?xml version="1.0" ?>
+<!DOCTYPE PISI SYSTEM "http://www.pardus.org.tr/projeler/pisi/pisi-spec.dtd">
+<PISI>
+    <Source>
+        <Name>enet12</Name>
+        <Homepage>http://enet.bespin.org/</Homepage>
+        <Packager>
+            <Name>Onur Küçük</Name>
+            <Email>onur@pardus.org.tr</Email>
+        </Packager>
+        <License>MIT</License>
+        <Icon>enet</Icon>
+        <IsA>library</IsA>
+        <Summary>UDP network library</Summary>
+        <Description>enet is a relatively thin, simple and robust network communication layer on top of UDP.</Description>
+        <Archive sha1sum="40242c48c255f65da2b21a6123640e1f7aeaa6c2" type="targz">http://enet.bespin.org/download/enet-1.3.5.tar.gz</Archive>
+        <Patches>
+			<Patch level="1">enet12.patch</Patch>
+        </Patches>
+    </Source>
+
+    <Package>
+        <Name>enet12</Name>
+        <Files>
+            <Path fileType="library">/opt/enet12/lib</Path>
+            <Path fileType="doc">/usr/share/doc</Path>
+        </Files>
+    </Package>
+    <Package>
+        <Name>enet12-devel</Name>
+        <RuntimeDependencies>
+			<Dependency>enet12</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="header">/opt/enet12/include</Path>
+        </Files>
+    </Package>
+
+    <History>
+        <Update release="5">
+            <Date>2012-09-01</Date>
+            <Version>1.3.5</Version>
+            <Comment>v.bump</Comment>
+            <Name>Osman Erkan</Name>
+            <Email>namso-01@hotmail.it</Email>
+        </Update>
+        <Update release="4">
+            <Date>2011-03-07</Date>
+            <Version>1.2.3</Version>
+            <Comment>enet12 include patch</Comment>
+            <Name>Erdem Artan</Name>
+            <Email>erdem.artan@linux.org.tr</Email>
+        </Update>
+        <Update release="3">
+            <Date>2011-03-07</Date>
+            <Version>1.2.3</Version>
+            <Comment>enet12 patch added</Comment>
+            <Name>Erdem Artan</Name>
+            <Email>erdem.artan@linux.org.tr</Email>
+        </Update>
+        <Update release="2">
+            <Date>2011-03-07</Date>
+            <Version>1.2.3</Version>
+            <Comment>Version bump and enet 1.2 for pardus 2011</Comment>
+            <Name>Erdem Artan</Name>
+            <Email>erdem.artan@linux.org.tr</Email>
+        </Update>
+        <Update release="1">
+            <Date>2009-08-06</Date>
+            <Version>1.2</Version>
+            <Comment>First release</Comment>
+            <Name>Onur Küçük</Name>
+            <Email>onur@pardus.org.tr</Email>
+        </Update>
+    </History>
+</PISI>

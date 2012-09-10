@@ -1,0 +1,82 @@
+<?xml version="1.0" ?>
+<!DOCTYPE PISI SYSTEM "http://www.pardus.org.tr/projeler/pisi/pisi-spec.dtd">
+<PISI>
+    <Source>
+        <Name>opal</Name>
+        <Homepage>http://www.gnome.org/</Homepage>
+        <Packager>
+            <Name>Bahadir Ozdemir</Name>
+            <Email>baho888@hotmail.com</Email>
+        </Packager>
+        <License>GPLv2</License>
+        <IsA>library</IsA>
+        <Summary>VoIP library</Summary>
+        <Description>This is an open source class library for the development of applications that wish to use SIP / H.323 protocols for multimedia communications over packet based networks</Description>
+        <Archive type="tarbz2" sha1sum="c43826bc3e273df048f47a77c4affb36614f2b7e">http://ftp.gnome.org/pub/GNOME/sources/opal/3.6/opal-3.6.8.tar.bz2</Archive>
+        <BuildDependencies>
+	    <Dependency>x264-devel</Dependency>
+            <Dependency>gawk</Dependency>
+            <Dependency>openssl-devel</Dependency>
+            <Dependency>openldap-client</Dependency>
+            <Dependency versionFrom="2.6.7">ptlib</Dependency>
+            <Dependency>speex-devel</Dependency>
+            <Dependency>libtheora-devel</Dependency>
+            <Dependency>ffmpeg-devel</Dependency>
+        </BuildDependencies>
+    </Source>
+
+    <Package>
+        <Name>opal</Name>
+        <RuntimeDependencies>
+	    <Dependency>x264</Dependency>
+            <Dependency>openssl</Dependency>
+            <Dependency>openldap-client</Dependency>
+            <Dependency versionFrom="2.6.7">ptlib</Dependency>
+            <Dependency>speex</Dependency>
+            <Dependency>libtheora</Dependency>
+            <Dependency>ffmpeg</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="config">/etc</Path>
+            <Path fileType="executable">/usr/bin</Path>
+            <Path fileType="executable">/sbin</Path>
+            <Path fileType="executable">/usr/sbin</Path>
+            <Path fileType="executable">/usr/libexec</Path>
+            <Path fileType="header">/usr/include</Path>
+            <Path fileType="library">/usr/lib</Path>
+            <Path fileType="data">/usr/share</Path>
+            <Path fileType="state">/var</Path>
+        </Files>
+    </Package>
+
+    <History>
+       <Update release="4">
+            <Date>2012-02-28</Date>
+            <Version>3.6.8</Version>
+            <Comment>Adapt to P2011</Comment>
+            <Name>Erdinç Gültekin</Name>
+            <Email>erdincgultekin@gmail.coö</Email>
+        </Update>
+        <Update release="3">
+            <Date>2011-11-27</Date>
+            <Version>3.6.8</Version>
+            <Comment>v_up</Comment>
+            <Name>Bahadir Ozdemir</Name>
+            <Email>baho888@hotmail.com</Email>
+        </Update>
+        <Update release="2">
+            <Date>2009-02-02</Date>
+            <Version>3.4.4</Version>
+            <Comment>v_up</Comment>
+            <Name>Bahadir Ozdemir</Name>
+            <Email>baho888@hotmail.com</Email>
+        </Update>
+        <Update release="1">
+            <Date>2008-12-05</Date>
+            <Version>3.4.2</Version>
+            <Comment>First release.</Comment>
+            <Name>Bahadir Ozdemir</Name>
+            <Email>baho888@hotmail.com</Email>
+        </Update>
+    </History>
+</PISI>

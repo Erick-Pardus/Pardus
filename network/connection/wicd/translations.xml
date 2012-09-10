@@ -1,0 +1,18 @@
+<?xml version="1.0" ?>
+<PISI>
+    <Source>
+        <Name>wicd</Name>
+        <Summary xml:lang="tr">Hafif kablolu / kablosuz ağ servisi</Summary>
+        <Description xml:lang="tr">Wicd, kablolu ve kablosuz bağlantıları yöneten bir servistir.</Description>
+    </Source>
+
+    <Package>
+        <Name>wicd-gtk</Name>
+        <Summary xml:lang="tr">Wicd'in GTK+ ile yazılmış arayüz istemcisi</Summary>
+    </Package>
+
+    <Package>
+        <Name>wicd-curses</Name>
+        <Summary xml:lang="tr">Wicd'in Urwid ile yazılmış arayüz istemcisi</Summary>
+    </Package>
+</PISI>
