@@ -1,0 +1,133 @@
+<?xml version="1.0" ?>
+<!DOCTYPE PISI SYSTEM "http://www.pardus.org.tr/projeler/pisi/pisi-spec.dtd">
+<PISI>
+    <Source>
+        <Name>audacious</Name>
+        <Homepage>http://audacious-media-player.org</Homepage>
+        <Packager>
+            <Name>Erdem Artan</Name>
+            <Email>baDibere@gmail.com</Email>
+        </Packager>
+        <License>GPL-v3</License>
+        <IsA>app:gui</IsA>
+	<PartOf>multimedia.sound</PartOf>
+       <Summary>an advanced audio player</Summary>
+       <Description>Audacious is an open source audio player. A descendant of XMMS, Audacious plays your music how you want it, 
+	 without stealing away your computer’s resources from other tasks. 
+	 Drag and drop folders and individual song files, search for artists and albums in your entire music library, or create and edit your own custom playlists.
+	 Listen to CD’s or stream music from the Internet. 
+	 Tweak the sound with the graphical equalizer or experiment with LADSPA effects. Enjoy the modern GTK-themed interface or change things up with Winamp classic skins. 
+	 Use the plugins included with Audacious to fetch lyrics for your music, to set an alarm in the morning, and more.
+       </Description>
+       <Archive sha1sum="3c006676f1dbc2376c098855b93606da0f58f7ea" type="tarbz2">http://distfiles.audacious-media-player.org/audacious-3.3.tar.bz2</Archive>
+       <BuildDependencies>
+	  <Dependency>dbus-glib-devel</Dependency>
+          <Dependency>libmcs-devel</Dependency>
+          <Dependency versionFrom="0.9">libmowgli-devel</Dependency>
+	  <Dependency>libxml2-devel</Dependency>
+	  <Dependency>cairo-devel</Dependency>
+	  <Dependency>gtk2-devel</Dependency>
+	  <Dependency>pango-devel</Dependency>
+	  <Dependency>libSM-devel</Dependency>  
+          <Dependency>intltool</Dependency>
+	  </BuildDependencies>
+    </Source>
+
+    <Package>
+        <Name>audacious</Name>
+        <RuntimeDependencies>
+           <Dependency>dbus-glib</Dependency>
+	   <Dependency>libmcs</Dependency>
+           <Dependency versionFrom="0.9">libmowgli</Dependency>
+           <Dependency>libxml2</Dependency>
+           <Dependency>cairo</Dependency>
+           <Dependency>gtk2</Dependency>
+           <Dependency>pango</Dependency>
+	   <Dependency>libSM</Dependency>
+	   <Dependency>audacious-plugins</Dependency>
+	   </RuntimeDependencies>
+        <Files>
+            <Path fileType="executable">/usr/bin</Path>
+            <Path fileType="library">/usr/lib</Path>
+            <Path fileType="library">/usr/lib/pkgconfig</Path>
+            <Path fileType="data">/usr/share/applications</Path>
+            <Path fileType="data">/usr/share/audacious</Path>
+            <Path fileType="data">/usr/share/icons</Path>
+            <Path fileType="locale">/usr/share/locale</Path>
+            <Path fileType="manfile">/usr/share/man</Path>
+	    <Path fileType="data">/usr/share/pixmaps</Path>
+            <Path fileType="doc">/usr/share/doc</Path>
+        </Files>
+    </Package>
+    <Package>
+         <Name>audacious-devel</Name>
+         <RuntimeDependencies>
+            <Dependency version="current">audacious</Dependency>
+         </RuntimeDependencies>
+        <Files>
+            <Path fileType="header">/usr/include/audacious</Path>
+            <Path fileType="header">/usr/include/libaudcore</Path>            
+            <Path fileType="header">/usr/include/libaudgui</Path>
+        </Files>
+    </Package>
+    <History>
+      <Update release="8">
+            <Date>2012-08-28</Date>
+            <Version>3.3</Version>
+            <Comment>Version Bump to new release</Comment>
+            <Name>Osman Erkan</Name>
+	    <Email>namso-01@hotmail.it</Email>
+        </Update>
+      <Update release="7">
+            <Date>2012-01-10</Date>
+            <Version>3.2</Version>
+            <Comment>Version Bump to new release</Comment>
+            <Name>Erdinç Gültekin</Name>
+	    <Email>erdincgultekin@gmail.com</Email>
+        </Update>
+       <Update release="6">
+            <Date>2012-01-10</Date>
+            <Version>3.2.02</Version>
+            <Comment>Version Bump to beta release</Comment>
+            <Name>Erdinç Gültekin</Name>
+	    <Email>erdincgultekin@gmail.com</Email>
+        </Update>
+        <Update release="5">
+            <Date>2010-11-22</Date>
+            <Version>3.1</Version>
+            <Comment>Version Bump</Comment>
+            <Email>baDibere@gmail.com</Email>
+            <Name>Erdem Artan</Name>    
+        </Update>
+        <Update release="4">
+            <Date>2010-09-23</Date>
+            <Version>3.0.3</Version>
+            <Comment>Version Bump</Comment>
+            <Email>baDibere@gmail.com</Email>
+            <Name>Erdem Artan</Name>    
+        </Update>
+        <Update release="3">
+            <Date>2010-07-13</Date>
+            <Version>2.5.3</Version>
+            <Comment>Version Bump</Comment>
+            <Email>baDibere@gmail.com</Email>
+            <Name>Erdem Artan</Name>    
+        </Update>
+        <Update release="2">
+            <Date>2010-04-23</Date>
+            <Version>2.5.0</Version>
+            <Comment>Version Bump</Comment>
+            <Email>baDibere@gmail.com</Email>
+            <Name>Erdem Artan</Name>    
+        </Update>
+        <Update release="1">
+            <Date>2010-04-10</Date>
+            <Version>2.4.4</Version>
+            <Comment>Initial</Comment>
+            <Email>baDibere@gmail.com</Email>
+            <Name>Erdem Artan</Name>    
+        </Update>
+    </History>
+</PISI>
+ 
+ 

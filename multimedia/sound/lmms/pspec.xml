@@ -1,0 +1,217 @@
+<?xml version="1.0" ?>
+<!DOCTYPE PISI SYSTEM "http://www.pardus.org.tr/projeler/pisi/pisi-spec.dtd">
+<PISI>
+    <Source>
+        <Name>lmms</Name>
+        <Homepage>http://lmms.sourceforge.net</Homepage>
+        <Packager>
+            <Name>Emre Anıl Ergeldi</Name>
+            <Email>anilergeldi@gmail.com</Email>
+        </Packager>
+        <License>GPLv2+</License>
+        <License>GPLv3+</License>
+        <License>LGPLv2+</License>
+        <Icon>lmms</Icon>
+	<PartOf>multimedia.editor</PartOf>
+        <IsA>app:gui</IsA>
+        <Summary>Linux Multimedia Studio</Summary>
+        <Description>LMMS is a free alternative to popular programs like FruityLoops/FL Studio, Cubase and Logic allowing you to produce music with your computer. This includes creation of loops, synthesizing and mixing sounds, arranging samples, having fun with your MIDI-keyboard and much more.</Description>
+        <Archive sha1sum="fbb2232d0cca2751f4395243a474287eb2b5bd2d" type="tarbz2">mirrors://sourceforge/lmms/lmms/0.4.12/lmms-0.4.13.tar.bz2</Archive>
+        <BuildDependencies>
+            <Dependency>ZynAddSubFX</Dependency>
+            <Dependency>alsa-lib-devel</Dependency>
+            <Dependency>fftw3-devel</Dependency>
+            <Dependency>fluidsynth-devel</Dependency>
+            <Dependency>gcc</Dependency>
+            <Dependency>jack-audio-connection-kit-devel</Dependency>
+            <Dependency>libsamplerate-devel</Dependency>
+            <Dependency>libsdl-devel</Dependency>
+            <Dependency>libsndfile-devel</Dependency>
+            <Dependency>libvorbis-devel</Dependency>
+            <Dependency>qt-devel</Dependency>
+        </BuildDependencies>
+        <Patches>
+            <Patch>libdir.diff</Patch>
+            <Patch level="1">vst-nowine.patch</Patch>
+        </Patches>
+    </Source>
+
+    <Package>
+        <Name>lmms</Name>
+        <RuntimeDependencies>
+            <Dependency>ZynAddSubFX</Dependency>
+            <Dependency>alsa-lib</Dependency>
+            <Dependency>fftw3</Dependency>
+            <Dependency>fluidsynth</Dependency>
+            <Dependency>jack-audio-connection-kit</Dependency>
+            <Dependency>libsamplerate</Dependency>
+            <Dependency>libsdl</Dependency>
+            <Dependency>libsndfile</Dependency>
+            <Dependency>libvorbis</Dependency>
+            <Dependency>qt</Dependency>
+            <Dependency>timidity</Dependency>
+            <Dependency>timidity-shompatches</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="executable">/usr/bin</Path>
+            <Path fileType="library">/usr/lib/lmms</Path>
+            <Path fileType="header">/usr/include/lmms</Path>
+            <Path fileType="data">/usr/share/lmms</Path>
+            <Path fileType="data">/usr/share/menu</Path>
+            <Path fileType="data">/usr/share/mime</Path>
+            <Path fileType="data">/usr/share/mimelnk</Path>
+            <Path fileType="data">/usr/share/applications</Path>
+            <Path fileType="data">/usr/share/pixmaps</Path>
+            <Path fileType="localedata">/usr/share/lmms/locale</Path>
+            <Path fileType="man">/usr/share/man</Path>
+            <Path fileType="doc">/usr/share/doc</Path>
+        </Files>
+    </Package>
+
+    <History>
+      <Update release="19">
+            <Date>2012-03-01</Date>
+            <Version>0.4.13</Version>
+            <Comment>Version bump</Comment>
+            <Name>Emre Anıl Ergeldi</Name>
+            <Email>anilergeldi@gmail.com</Email>
+        </Update>
+        <Update release="18">
+            <Date>2011-09-19</Date>
+            <Version>0.4.12</Version>
+            <Comment>Version bump</Comment>
+            <Name>Anıl Özbek</Name>
+            <Email>ozbekanil@gmail.com</Email>
+        </Update>
+        <Update release="17">
+            <Date>2009-12-25</Date>
+            <Version>0.4.6</Version>
+            <Comment>Bump to latest bugfix release, change home page</Comment>
+            <Name>Mehmet Nur Olcay</Name>
+            <Email>mnurolcay@gmail.com</Email>
+        </Update>
+        <Update release="16">
+            <Date>2009-08-13</Date>
+            <Version>0.4.5</Version>
+            <Comment>
+                Bump to latest stable, remove patches integrated upstream:
+                -Improved VST support, allowing to run many more VST plugins
+                -Ship CALF LADSPA plugins with LMMS
+                -Fixed graphical glitches with Qt 4.5
+                -Added panning and volume envelope support to Sf2Player plugin
+                and fixes for most of the bugs found in 0.4.4
+            </Comment>
+            <Name>Mehmet Nur Olcay</Name>
+            <Email>mnurolcay@gmail.com</Email>
+        </Update>
+        <Update release="15">
+            <Date>2009-06-06</Date>
+            <Version>0.4.4</Version>
+            <Comment>
+                -Remove Replaces and Conflicts tags, edit deps for 2009
+                -Add LGPLv2 licence, make actions.py more readable
+                -Add some cosmetic and build patches
+            </Comment>
+            <Name>Mehmet Nur Olcay</Name>
+            <Email>mnurolcay@gmail.com</Email>
+        </Update>
+        <Update release="14">
+            <Date>2009-05-06</Date>
+            <Version>0.4.4</Version>
+            <Comment>Bump to latest stable. Add Replaces and Conflicts tag for lmms-extras, they are in same project now.</Comment>
+            <Name>Mehmet Nur Olcay</Name>
+            <Email>mnurolcay@gmail.com</Email>
+        </Update>
+        <Update release="13">
+            <Date>2009-02-24</Date>
+            <Version>0.4.3</Version>
+            <Comment>New bugfix release. Mimetype desktop file added, define configure parameters for supported/unsupported options.</Comment>
+            <Name>Mehmet Nur Olcay</Name>
+            <Email>mnurolcay@gmail.com</Email>
+        </Update>
+        <Update release="12">
+            <Date>2008-12-20</Date>
+            <Version>0.4.2</Version>
+            <Comment>New bugfix release including fixes for problems with files created with LMMS 0.4.0</Comment>
+            <Name>Mehmet Nur Olcay</Name>
+            <Email>mnurolcay@gmail.com</Email>
+        </Update>
+        <Update release="11">
+            <Date>2008-12-18</Date>
+            <Version>0.4.1</Version>
+            <Comment>New maintain release including bug fixes and improvements</Comment>
+            <Name>Mehmet Nur Olcay</Name>
+            <Email>mnurolcay@gmail.com</Email>
+        </Update>
+        <Update release="10">
+            <Date>2008-10-31</Date>
+            <Version>0.4.0</Version>
+            <Comment>Bump to latest stable.</Comment>
+            <Name>Mehmet Nur Olcay</Name>
+            <Email>mnurolcay@gmail.com</Email>
+        </Update>
+        <Update release="9">
+            <Date>2008-10-20</Date>
+            <Version>0.4.0_rc3</Version>
+            <Comment>Bump to new RC.</Comment>
+            <Name>Mehmet Nur Olcay</Name>
+            <Email>mnurolcay@gmail.com</Email>
+        </Update>
+        <Update release="8">
+            <Date>2008-09-23</Date>
+            <Version>0.4.0_rc2</Version>
+            <Comment>Version bump.</Comment>
+            <Name>Mehmet Nur Olcay</Name>
+            <Email>mnurolcay@gmail.com</Email>
+        </Update>
+        <Update release="7">
+            <Date>2008-09-16</Date>
+            <Version>0.4.0_rc1</Version>
+            <Comment>Version bump. Deps and filetypes rearranged. Unneded patches removed. Licence fix. Now build with cmake.Icon tag added.And takeover the package.</Comment>
+            <Name>Mehmet Nur Olcay</Name>
+            <Email>mnurolcay@gmail.com</Email>
+        </Update>
+        <Update release="6">
+            <Date>2008-03-17</Date>
+            <Version>0.3.2</Version>
+            <Comment>Version Bump.</Comment>
+            <Name>Eren Türkay</Name>
+            <Email>turkay.eren@gmail.com</Email>
+        </Update>
+        <Update release="5">
+            <Date>2008-01-21</Date>
+            <Version>0.3.1</Version>
+            <Comment>Version Bump.</Comment>
+            <Name>Rasim AKAR</Name>
+            <Email>rasimakar@gmail.com</Email>
+        </Update>
+        <Update release="4">
+            <Date>2007-09-14</Date>
+            <Version>0.3.0</Version>
+            <Comment>Remove duplicate of desktop file and add Turkish patch for it.</Comment>
+            <Name>Eren Türkay</Name>
+            <Email>turkay.eren@gmail.com</Email>
+        </Update>
+        <Update release="3">
+            <Date>2007-08-20</Date>
+            <Version>0.3.0</Version>
+            <Comment>Version bump to stable.</Comment>
+            <Name>Eren Türkay</Name>
+            <Email>turkay.eren@gmail.com</Email>
+        </Update>
+        <Update release="2">
+            <Date>2007-05-26</Date>
+            <Version>0.2.1</Version>
+            <Comment>Add missing dependencies, disable static libs and make correct installation by adding automake line before compiling process. Makefile.in in tarball was created with automake-1.4 which is bad, see; http://gcc.gnu.org/ml/gcc-bugs/2001-02/msg00543.html</Comment>
+            <Name>Eren Türkay</Name>
+            <Email>turkay.eren@gmail.com</Email>
+        </Update>
+        <Update release="1">
+            <Date>2007-02-11</Date>
+            <Version>0.2.1</Version>
+            <Comment>First release.</Comment>
+            <Name>Rasim AKAR</Name>
+            <Email>rasimakar@pardusdepo.com</Email>
+        </Update>
+    </History>
+</PISI>

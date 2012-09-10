@@ -1,0 +1,8 @@
+<?xml version="1.0" ?>
+<PISI>
+    <Source>
+        <Name>audacious-plugins</Name>
+        <Summary xml:lang="tr">Audacious eklentileri</Summary>
+        <Description xml:lang="tr">Audacious için eklentiler</Description>
+    </Source>
+</PISI>

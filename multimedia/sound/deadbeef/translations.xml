@@ -1,0 +1,8 @@
+<?xml version="1.0" ?>
+<PISI>
+    <Source>
+        <Name>deadbeef</Name>
+        <Summary xml:lang="tr">X1 ile GNU / Linux sistemleri için ses çalar</Summary>
+        <Description xml:lang="tr">DeaDBeeF (0xDEADBEEF gibi) X11 ile GNU / Linux sistemleri (şimdi olsa da FreeBSD, X olmaksızın düz konsolda çalışır ve OpenSolaris) için bir ses oynatıcısıdır.</Description>
+    </Source>
+</PISI>

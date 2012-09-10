@@ -1,0 +1,61 @@
+<?xml version='1.0'?>
+<!DOCTYPE PISI SYSTEM 'http://www.pardus.org.tr/projeler/pisi/pisi-spec.dtd'>
+<PISI>
+    <Source>
+        <Name>yarock</Name>
+        <Homepage>http://opendesktop.org/content/show.php/YaRock?content=129372</Homepage>
+        <Packager>
+            <Name>Alexey Ivanov</Name>
+            <Email>alexey.ivanes@gmail.com</Email>
+        </Packager>
+        <License>GPL</License>
+        <Icon>yarock</Icon>
+        <IsA>app:gui</IsA>
+        <Summary>Yarock is Qt4 Modern Music Player designed to provide an easy and pretty music
+collection browser based on cover art.</Summary>
+        <Description>Yarock is Qt4 Modern Music Player designed to provide an easy and pretty music
+collection browser based on cover art.</Description>
+        <Archive sha1sum="01cf8dff3df509ba86ea02379fcfd5805073f0f7" type="targz">https://launchpad.net/yarock/trunk/0.0.58/+download/Yarock_0.0.58_source.tar.gz</Archive>
+        <BuildDependencies>
+            <Dependency>qt-devel</Dependency>
+            <Dependency>phonon-devel</Dependency>
+            <Dependency>taglib-devel</Dependency>
+        </BuildDependencies>
+    </Source>
+    <Package>
+        <Name>yarock</Name>
+        <RuntimeDependencies>
+            <Dependency>qt</Dependency>
+            <Dependency>phonon</Dependency>
+            <Dependency>taglib</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="executable">/usr/bin</Path>
+            <Path fileType="library">/usr/lib</Path>
+            <Path fileType="data">/usr/share</Path>
+        </Files>
+    </Package>
+    <History>
+       <Update release="3">
+            <Date>2012-08-28</Date>
+            <Version>0.0.58</Version>
+            <Comment>Version bump</Comment>
+            <Name>Fatih Turgel</Name>
+            <Email>turgelfatih@gmail.com</Email>
+        </Update>
+        <Update release="2">
+            <Date>2011-07-26</Date>
+            <Version>0.0.51</Version>
+            <Comment>Version bump</Comment>
+            <Name>Alexey Ivanov</Name>
+            <Email>alexey.ivanes@gmail.com</Email>
+        </Update>
+        <Update release="1">
+            <Date>2011-05-24</Date>
+            <Version>0.0.49</Version>
+            <Comment>First release.</Comment>
+            <Name>Alexey Ivanov</Name>
+            <Email>alexey.ivanes@gmail.com</Email>
+        </Update>
+    </History>
+</PISI>

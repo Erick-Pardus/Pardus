@@ -1,0 +1,70 @@
+<PISI>
+    <Source>
+        <Name>gmtk</Name>
+        <Homepage>http://code.google.com/p/gmtk/</Homepage>
+        <Packager>
+            <Name>Erdinç Gültekin</Name>
+            <Email>erdincgultekin@gmail.com</Email>
+        </Packager>
+        <License>GPLv2</License>
+        <PartOf>multimedia.toolkit</PartOf>
+        <IsA>library</IsA>
+        <Summary>gnome-mplayer toolkit</Summary>
+        <Description>A set of functions that support non-graphical operations</Description>
+        <Archive sha1sum="cbf3a8620327cd06f325e05b68c7d7858c070455" type="targz">http://gmtk.googlecode.com/files/gmtk-1.0.6.tar.gz</Archive>
+	<BuildDependencies>
+            <Dependency>alsa-lib-devel</Dependency>
+            <Dependency>gconf-devel</Dependency>
+            <Dependency>glib2-devel</Dependency>
+            <Dependency>gtk2-devel</Dependency>
+            <Dependency>libX11-devel</Dependency>
+            <Dependency>pkgconfig</Dependency>
+            <Dependency>pulseaudio-libs-devel</Dependency>
+        </BuildDependencies>
+    </Source>
+    <Package>
+        <Name>gmtk</Name>
+        <RuntimeDependencies>
+            <Dependency>alsa-lib</Dependency>
+            <Dependency>gconf</Dependency>
+            <Dependency>glib2</Dependency>
+            <Dependency>gtk2</Dependency>
+            <Dependency>libX11</Dependency>
+            <Dependency>pkgconfig</Dependency>
+            <Dependency>pulseaudio-libs</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="doc">/usr/share/doc</Path>
+            <Path fileType="library">/usr/lib</Path>
+	    <Path fileType="localedata">/usr/share/locale</Path>
+        </Files>
+    </Package>
+    
+    <Package>
+        <Name>gmtk-devel</Name>
+        <RuntimeDependencies>
+            <Dependency release="current">gmtk</Dependency>
+        </RuntimeDependencies>
+	<Summary>gtmk için geliştirme dosyaları</Summary>
+        <Files>
+	    <Path fileType="header">/usr/include/gmtk</Path>
+        </Files>
+    </Package>
+    
+    <History>
+        <Update release="2">
+            <Date>2012-08-29</Date>
+            <Version>1.0.6</Version>
+            <Comment>version bump</Comment>
+            <Name>Osman Erkan</Name>
+            <Email>namso-01@hotmail.it</Email>
+        </Update>
+        <Update release="1">
+            <Date>2012-02-29</Date>
+            <Version>1.0.5</Version>
+            <Comment>first release</Comment>
+            <Name>Erdinç Gültekin</Name>
+            <Email>erdincgultekin@gmail.com</Email>
+        </Update>
+    </History>
+</PISI>
