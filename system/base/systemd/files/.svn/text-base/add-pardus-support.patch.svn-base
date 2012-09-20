@@ -1,0 +1,158 @@
+diff -Nuar systemd-187.orig/configure.ac systemd-187/configure.ac
+--- systemd-187.orig/configure.ac	2012-07-20 01:37:09.000000000 +0300
++++ systemd-187/configure.ac	2012-07-23 01:10:07.650502259 +0300
+@@ -504,7 +504,7 @@
+ AC_PATH_PROG([XSLTPROC], [xsltproc])
+ AM_CONDITIONAL(HAVE_XSLTPROC, test x"$XSLTPROC" != x)
+ 
+-AC_ARG_WITH(distro, AS_HELP_STRING([--with-distro=DISTRO],[Specify the distribution to target: One of fedora, suse, debian, ubuntu, arch, gentoo, slackware, altlinux, mandriva, mageia, angstrom or other]))
++AC_ARG_WITH(distro, AS_HELP_STRING([--with-distro=DISTRO],[Specify the distribution to target: One of fedora, suse, debian, ubuntu, arch, gentoo, slackware, altlinux, mandriva, mageia, angstrom, pardus or other]))
+ if test "z$with_distro" = "z"; then
+         if test "$cross_compiling" = yes; then
+                 AC_MSG_WARN([Target distribution cannot be reliably detected when cross-compiling. You should specify it with --with-distro (see $0 --help for recognized distros)])
+@@ -587,6 +587,13 @@
+                 AC_DEFINE(TARGET_MAGEIA, [], [Target is Mageia])
+                 M4_DEFINES=-DTARGET_MAGEIA=1
+                 ;;
++        pardus)
++                SYSTEM_SYSVINIT_PATH=/etc/init.d
++                SYSTEM_SYSVRCND_PATH=/etc/init.d
++                SPECIAL_SYSLOG_SERVICE=rsyslog.service
++                AC_DEFINE(TARGET_PARDUS, [], [Target is Pardus])
++                M4_DISTRO_FLAG=-DTARGET_PARDUS=1
++                ;;
+         other)
+                 ;;
+         *)
+@@ -639,6 +646,7 @@
+ AM_CONDITIONAL(TARGET_MANDRIVA, test x"$with_distro" = xmandriva)
+ AM_CONDITIONAL(TARGET_ANGSTROM, test x"$with_distro" = xangstrom)
+ AM_CONDITIONAL(TARGET_MAGEIA, test x"$with_distro" = xmageia)
++AM_CONDITIONAL(TARGET_PARDUS, test x"$with_distro" = xpardus)
+ 
+ AM_CONDITIONAL(HAVE_SYSV_COMPAT, test "$SYSTEM_SYSV_COMPAT" = "yes")
+ 
+diff -Nuar systemd-187.orig/Makefile.am systemd-187/Makefile.am
+--- systemd-187.orig/Makefile.am	2012-07-20 01:40:16.000000000 +0300
++++ systemd-187/Makefile.am	2012-07-23 01:07:42.659314897 +0300
+@@ -189,6 +189,12 @@
+ 	-DKBD_SETFONT=\"/bin/setfont\" \
+ 	-DDEFAULT_FONT=\"LatArCyrHeb-16\"
+ else
++if TARGET_PARDUS
++AM_CPPFLAGS += \
++ -DKBD_LOADKEYS=\"/usr/bin/loadkeys\" \
++ -DKBD_SETFONT=\"/usr/bin/setfont\" \
++ -DDEFAULT_FONT=\"LatArCyrHeb-16\"
++else
+ AM_CPPFLAGS += \
+ 	-DKBD_LOADKEYS=\"/bin/loadkeys\" \
+ 	-DKBD_SETFONT=\"/bin/setfont\" \
+@@ -199,6 +205,7 @@
+ endif
+ endif
+ endif
++endif
+ 
+ # ------------------------------------------------------------------------------
+ rootbin_PROGRAMS = \
+@@ -423,6 +430,13 @@
+ 	systemd-rc-local-generator
+ endif
+ 
++if TARGET_PARDUS
++dist_systemunit_DATA += \
++ units/pardus/prefdm.service \
++ units/pardus/rc-local.service \
++ units/pardus/halt-local.service
++endif
++
+ dist_doc_DATA = \
+ 	README \
+ 	NEWS \
+diff -Nuar systemd-187.orig/src/core/hostname-setup.c systemd-187/src/core/hostname-setup.c
+--- systemd-187.orig/src/core/hostname-setup.c	2012-07-09 17:37:46.000000000 +0300
++++ systemd-187/src/core/hostname-setup.c	2012-07-23 00:58:05.614528950 +0300
+@@ -38,6 +38,8 @@
+ #define FILENAME "/etc/rc.conf"
+ #elif defined(TARGET_GENTOO)
+ #define FILENAME "/etc/conf.d/hostname"
++#elif defined(TARGET_PARDUS)
++#define FILENAME "/etc/env.d/01hostname"
+ #endif
+ 
+ static int read_and_strip_hostname(const char *path, char **hn) {
+@@ -65,7 +67,7 @@
+ 
+ static int read_distro_hostname(char **hn) {
+ 
+-#if defined(TARGET_FEDORA) || defined(TARGET_ARCH) || defined(TARGET_GENTOO) || defined(TARGET_ALTLINUX) || defined(TARGET_MANDRIVA) || defined(TARGET_MAGEIA)
++#if defined(TARGET_FEDORA) || defined(TARGET_ARCH) || defined(TARGET_GENTOO) || defined(TARGET_ALTLINUX) || defined(TARGET_MANDRIVA) || defined(TARGET_MAGEIA) || defined(TARGET_PARDUS)
+         int r;
+         FILE *f;
+ 
+diff -Nuar systemd-187.orig/units/pardus/halt-local.service systemd-187/units/pardus/halt-local.service
+--- systemd-187.orig/units/pardus/halt-local.service	1970-01-01 02:00:00.000000000 +0200
++++ systemd-187/units/pardus/halt-local.service	2012-07-23 01:02:49.464980332 +0300
+@@ -0,0 +1,20 @@
++# This file is part of systemd.
++#
++# systemd is free software; you can redistribute it and/or modify it
++# under the terms of the GNU General Public License as published by
++# the Free Software Foundation; either version 2 of the License, or
++# (at your option) any later version.
++
++[Unit]
++Description=/etc/conf.d/local.stop Compatibility
++ConditionPathExists=/etc/conf.d/local.stop
++DefaultDependencies=no
++After=shutdown.target
++Before=final.target
++
++[Service]
++Type=oneshot
++ExecStart=/bin/bash /etc/conf.d/local.stop
++TimeoutSec=0
++StandardOutput=tty
++RemainAfterExit=yes
+diff -Nuar systemd-187.orig/units/pardus/prefdm.service systemd-187/units/pardus/prefdm.service
+--- systemd-187.orig/units/pardus/prefdm.service	1970-01-01 02:00:00.000000000 +0200
++++ systemd-187/units/pardus/prefdm.service	2012-07-23 01:02:16.561391684 +0300
+@@ -0,0 +1,15 @@
++# This file is part of systemd.
++#
++# systemd is free software; you can redistribute it and/or modify it
++# under the terms of the GNU General Public License as published by
++# the Free Software Foundation; either version 2 of the License, or
++# (at your option) any later version.
++
++[Unit]
++Description=Display Manager
++After=syslog.target rc-local.service systemd-user-sessions.service
++
++[Service]
++ExecStart=/usr/bin/start-dm --boot
++Restart=always
++RestartSec=0
+diff -Nuar systemd-187.orig/units/pardus/rc-local.service systemd-187/units/pardus/rc-local.service
+--- systemd-187.orig/units/pardus/rc-local.service	1970-01-01 02:00:00.000000000 +0200
++++ systemd-187/units/pardus/rc-local.service	2012-07-23 01:03:38.450367931 +0300
+@@ -0,0 +1,18 @@
++# This file is part of systemd.
++#
++# systemd is free software; you can redistribute it and/or modify it
++# under the terms of the GNU General Public License as published by
++# the Free Software Foundation; either version 2 of the License, or
++# (at your option) any later version.
++
++[Unit]
++Description=/etc/conf.d/local.start Compatibility
++ConditionPathExists=/etc/conf.d/local.start
++
++[Service]
++Type=forking
++ExecStart=/bin/bash /etc/conf.d/local.start
++TimeoutSec=0
++StandardOutput=tty
++RemainAfterExit=yes
++SysVStartPriority=99

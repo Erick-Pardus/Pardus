@@ -1,0 +1,263 @@
+<?xml version="1.0" ?>
+<!DOCTYPE PISI SYSTEM "http://www.pardus.org.tr/projeler/pisi/pisi-spec.dtd">
+<PISI>
+    <Source>
+        <Name>systemd</Name>
+        <Homepage>http://www.freedesktop.org/wiki/Software/systemd</Homepage>
+        <Packager>
+            <Name>Erdem Artan</Name>
+            <Email>erdem@pardus-linux.org</Email>
+        </Packager>
+        <License>GPLv2</License>
+        <Icon>systemd</Icon>
+        <IsA>app:cli</IsA>
+        <Summary>System and service manager</Summary>
+        <Description>System and service manager</Description>
+        <!--<Archive sha1sum="1bd025aec82929f4c7eb19b3fd3a0c25435e7bbb" type="tarlzma">http://www.freedesktop.org/software/systemd/systemd-187.tar.xz</Archive>-->
+        <Archive sha1sum="3e7ea7d1a9e7fcc9b3ec0e190d61ef1a7e17eaef" type="tarlzma">http://www.freedesktop.org/software/systemd/systemd-189.tar.xz</Archive>
+        <BuildDependencies>
+            <Dependency versionFrom="2.20">libblkid-devel</Dependency>
+            <Dependency>libkmod-devel</Dependency>
+        </BuildDependencies>
+        <Patches>
+            <Patch level="1">add-pardus-support.patch</Patch>
+            <Patch level="1">0002-journald-add-missing-includes.patch</Patch>
+            <Patch level="1">0003-journal-add-HAVE_XZ-check-to-avoid-build-failure.patch</Patch>
+            <Patch level="1">0004-journal-don-t-try-to-compress-without-XZ.patch</Patch>
+        </Patches>
+    </Source>
+
+    <Package>
+        <Name>systemd</Name>
+        <RuntimeDependencies>
+            <Dependency version="current">libudev</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="executable">/bin</Path>
+            <Path fileType="executable">/usr/bin</Path>
+            <Path fileType="config">/etc</Path>
+            <Path fileType="config">/etc/os-release</Path>
+            <Path fileType="library">/lib/systemd</Path>
+            <Path fileType="library">/usr/lib</Path>
+            <Path fileType="data">/usr/share/systemd</Path>
+            <Path fileType="data">/usr/share/polkit-1</Path>
+            <Path fileType="manfile">/usr/share/man</Path>
+            <Path fileType="doc">/usr/share/doc</Path>
+            <Path fileType="data">/usr/share/dbus-1</Path>
+            <Path fileType="library">/var/lib/systemd</Path>
+        </Files>
+        <AdditionalFiles>
+            <AdditionalFile owner="root" permission="0644" target="/etc/os-release">os-release</AdditionalFile>
+        </AdditionalFiles>
+        <Provides>
+            <COMAR script="systemd.py">System.Package</COMAR>
+            <COMAR script="units.py">System.Package</COMAR>
+        </Provides>
+    </Package>
+
+    <Package>
+        <Name>udev</Name>
+        <PartOf>system.base</PartOf>
+        <RuntimeDepedencies>
+            <Dependency version="current">libudev</Dependency>
+        </RuntimeDepedencies>
+        <Files>
+            <Path fileType="executable">/sbin/udevadm</Path>
+            <Path fileType="executable">/sbin/udevd</Path>
+            <Path fileType="executable">/sbin/scsi_id</Path>
+            <Path fileType="executable">/usr/bin/udevadm</Path>
+            <Path fileType="executable">/lib/systemd/systemd-udevd</Path>
+            <Path fileType="config">/etc/udev</Path>
+            <Path fileType="library">/lib/udev</Path>
+            <Path fileType="library">/lib/firmware/updates</Path>
+            <Path fileType="manfile">/usr/share/man/man7/udev.7</Path>
+            <Path fileType="manfile">/usr/share/man/man8/*udev*</Path>
+            <Path fileType="data">/lib/systemd/system/sysinit.target.wants/*udev*</Path>
+            <Path fileType="data">/lib/systemd/system/socket.target.wants/*udev*</Path>
+            <Path fileType="data">/lib/systemd/system/*udev*</Path>
+        </Files>
+        <Provides>
+            <COMAR script="udev.py">System.Package</COMAR>
+        </Provides>
+    </Package>
+
+    <Package>
+        <Name>libudev</Name>
+        <PartOf>system.base</PartOf>
+        <Files>
+            <Path fileType="library">/usr/lib/libudev.so*</Path>
+        </Files>
+    </Package>
+
+    <Package>
+        <Name>libudev-devel</Name>
+        <PartOf>system.devel</PartOf>
+        <RuntimeDependencies>
+            <Dependency version="current">libudev</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="data">/usr/lib/pkgconfig/libudev.pc</Path>
+            <Path fileType="data">/usr/share/pkgconfig/udev.pc</Path>
+            <Path fileType="header">/usr/include/libudev.h</Path>
+        </Files>
+    </Package>
+
+<!-- sysvinit compability -->
+    <Package>
+        <Name>systemd-sysvinit</Name>
+        <Summary>sysvinit compability for systemd</Summary>
+        <Replaces>
+            <Package>sysvinit</Package>
+        </Replaces>
+        <RuntimeDependencies>
+            <Dependency>systemd</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="executable">/sbin/halt</Path>
+            <Path fileType="executable">/sbin/poweroff</Path>
+            <Path fileType="executable">/sbin/runlevel</Path>
+            <Path fileType="executable">/sbin/init</Path>
+            <Path fileType="executable">/sbin/telinit</Path>
+            <Path fileType="executable">/sbin/reboot</Path>
+            <Path fileType="executable">/sbin/shutdown</Path>
+            <Path fileType="manfile">/usr/share/man/man8/runlevel.8</Path>
+            <Path fileType="manfile">/usr/share/man/man8/shutdown.8</Path>
+            <Path fileType="manfile">/usr/share/man/man8/reboot.8</Path>
+            <Path fileType="manfile">/usr/share/man/man8/halt.8</Path>
+            <Path fileType="manfile">/usr/share/man/man8/telinit.8</Path>
+            <Path fileType="manfile">/usr/share/man/man8/poweroff.8</Path>
+        </Files>
+        <Provides>
+            <!-- FIXME: This may need a rework -->
+            <COMAR script="sysvinit.py">System.Package</COMAR>
+        </Provides>
+    </Package>
+
+    <Package>
+        <Name>libsystemd-daemon</Name>
+        <Summary>systemd-daemon libraries</Summary>
+        <Files>
+            <Path fileType="library">/usr/lib/libsystemd-daemon*</Path>
+        </Files>
+    </Package>
+
+    <Package>
+        <Name>libsystemd-id128</Name>
+        <Summary>systemd-id128 libraries</Summary>
+        <Files>
+            <Path fileType="library">/usr/lib/libsystemd-id128*</Path>
+        </Files>
+    </Package>
+
+    <Package>
+        <Name>libsystemd-journal</Name>
+        <Summary>systemd-journal libraries</Summary>
+        <Files>
+            <Path fileType="library">/usr/lib/libsystemd-journal*</Path>
+        </Files>
+    </Package>
+
+    <Package>
+        <Name>libsystemd-login</Name>
+        <Summary>systemd-login libraries</Summary>
+        <Files>
+            <Path fileType="library">/usr/lib/libsystemd-login*</Path>
+        </Files>
+    </Package>
+
+    <Package>
+        <Name>libsystemd-daemon-devel</Name>
+        <Summary>header files for systemd-daemon libraries</Summary>
+        <Files>
+            <Path fileType="header">/usr/include/systemd/sd-daemon.h</Path>
+            <Path fileType="header">/usr/include/systemd/sd-messages.h</Path>
+            <Path fileType="header">/usr/include/systemd/sd-readahead.h</Path>
+            <Path fileType="header">/usr/include/systemd/sd-shutdown.h</Path>
+            <Path fileType="data">/usr/lib/pkgconfig/libsystemd-daemon.pc</Path>
+            <Path fileType="data">/usr/share/pkgconfig/systemd.pc</Path>
+            <Path fileType="data">/usr/lib/pkgconfig/systemd.pc</Path>
+        </Files>
+    </Package>
+
+    <Package>
+        <Name>libsystemd-id128-devel</Name>
+        <Summary>header files for systemd-id128 libraries</Summary>
+        <Files>
+            <Path fileType="header">/usr/include/systemd/sd-id128.h</Path>
+            <Path fileType="data">/usr/lib/pkgconfig/libsystemd-id128.pc</Path>
+        </Files>
+    </Package>
+
+    <Package>
+        <Name>libsystemd-journal-devel</Name>
+        <Summary>header files for systemd-journal libraries</Summary>
+        <Files>
+            <Path fileType="header">/usr/include/systemd/sd-journal.h</Path>
+            <Path fileType="data">/usr/lib/pkgconfig/libsystemd-journal.pc</Path>
+        </Files>
+    </Package>
+
+    <Package>
+        <Name>libsystemd-login-devel</Name>
+        <Summary>header files for systemd-login libraries</Summary>
+        <Files>
+            <Path fileType="header">/usr/include/systemd/sd-login.h</Path>
+            <Path fileType="data">/usr/lib/pkgconfig/libsystemd-login.pc</Path>
+        </Files>
+    </Package>
+
+    <Package>
+        <Name>pam_systemd</Name>
+        <RuntimeDependencies>
+            <Dependency version="current">libsystemd-daemon</Dependency>
+        </RuntimeDependencies>
+        <Summary>systemd libraries</Summary>
+        <Files>
+            <Path fileType="library">/lib/security/pam_systemd.so</Path>
+        </Files>
+    </Package>
+
+
+    <Package>
+        <Name>libgudev1</Name>
+        <Summary>Libraries for adding libudev support to applications that use glib</Summary>
+        <RuntimeDependencies>
+            <Dependency version="current">libudev</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="library">/usr/lib/libgudev-1.0.so*</Path>
+        </Files>
+    </Package>
+
+    <Package>
+        <Name>libgudev1-devel</Name>
+        <PartOf>system.devel</PartOf>
+        <Summary>Development files for libgudev1</Summary>
+        <RuntimeDependencies>
+            <Dependency release="current">libgudev1</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="header">/usr/include/gudev-1.0</Path>
+            <Path fileType="data">/usr/lib/pkgconfig/gudev-1.0*</Path>
+            <Path fileType="doc">/usr/share/gtk-doc/html/gudev</Path>
+        </Files>
+    </Package>
+
+    <History>
+        <Update release="79">
+            <Date>2012-09-20</Date>
+            <Version>189</Version>
+            <Comment>version bump</Comment>
+            <Name>Osman Erkan</Name>
+            <Email>namso-01@hotmail.it</Email>
+        </Update>
+        <!-- Since last release number of udev is 77, start release number from 78 -->
+        <Update release="78">
+            <Date>2012-06-17</Date>
+            <Version>187</Version>
+            <Comment>First release</Comment>
+            <Name>Erdem Artan</Name>
+            <Email>erdem@pardus-linux.org</Email>
+        </Update>
+    </History>
+</PISI>

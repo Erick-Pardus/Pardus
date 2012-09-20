@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/pardus/!svn/ver/974/playground/badibere/systemd/comar
+END
+systemd.py
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/pardus/!svn/ver/974/playground/badibere/systemd/comar/systemd.py
+END
+sysvinit.py
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/pardus/!svn/ver/681/playground/badibere/systemd/comar/sysvinit.py
+END
+units.py
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/pardus/!svn/ver/974/playground/badibere/systemd/comar/units.py
+END
+udev.py
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/pardus/!svn/ver/681/playground/badibere/systemd/comar/udev.py
+END

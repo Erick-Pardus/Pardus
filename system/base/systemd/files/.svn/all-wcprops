@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/pardus/!svn/ver/974/playground/badibere/systemd/files
+END
+os-release
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/pardus/!svn/ver/974/playground/badibere/systemd/files/os-release
+END
+add-pardus-support.patch
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/pardus/!svn/ver/974/playground/badibere/systemd/files/add-pardus-support.patch
+END
