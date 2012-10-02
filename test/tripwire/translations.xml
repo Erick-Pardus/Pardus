@@ -1,0 +1,8 @@
+<?xml version="1.0" ?>
+<PISI>
+    <Source>
+        <Name>tripwire</Name>
+        <Summary xml:lang="en">An intrusion detection system.</Summary>
+        <Description xml:lang="en">The Tripwire package contains programs used to verify the integrity of the files on a given system.</Description>
+    </Source>
+</PISI>
