@@ -20,6 +20,7 @@ def setup():
 				    --without-system-nss \
 				    --with-system-mdds \
 				    --with-system-orcus \
+				    --with-system-xmlsec \
 				    --without-system-clucene \
 				    --without-system-libcdr \
 				    --without-system-libcmis \
@@ -27,7 +28,6 @@ def setup():
 				    --without-system-altlinuxhyph \
 				    --without-system-liblangtag \
 				    --without-system-jars \
-				    --without-help \
 				    --without-system-hsqldb \
 				    --disable-mathmldtd \
 				    --disable-epm \

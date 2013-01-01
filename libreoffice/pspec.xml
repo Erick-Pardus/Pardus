@@ -155,6 +155,8 @@
             <Patch level="1">fedora/0001-rhbz-667082-do-not-crash-importing-section-containin.patch</Patch>
             <Patch level="1">fedora/0001-Related-rhbz-718976-crash-in-SwTxtSizeInfo-GetMultiC.patch</Patch>
             <Patch level="1">fedora/0001-Resolves-rhbz-715549-use-fontconfig-s-detected-forma.patch</Patch>-->
+	    <Patch level="1">libreoffice-3.7-system-pyuno.patch</Patch>
+	    <Patch level="1">libreoffice-3.7-separate-checks.patch</Patch>
         </Patches>
     </Source>
 
