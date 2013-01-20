@@ -21,9 +21,10 @@ def setup():
 				    --with-system-mdds \
 				    --with-system-orcus \
 				    --with-system-xmlsec \
+				    --with-system-hypen \
+				    --with-system-libcmis \
 				    --without-system-clucene \
 				    --without-system-libcdr \
-				    --without-system-libcmis \
 				    --without-system-libmspub \
 				    --without-system-altlinuxhyph \
 				    --without-system-liblangtag \

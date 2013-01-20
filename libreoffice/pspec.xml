@@ -118,8 +118,8 @@
 	    <Dependency>libexttextcat-devel</Dependency>
 	    <Dependency>mdds-devel</Dependency>
 	    <Dependency>xmlsec-devel</Dependency>
-	    <!--<Dependency>libcmis-devel</Dependency>
-	    <Dependency>libcdr-devel</Dependency>-->
+	    <Dependency>libcmis-devel</Dependency>
+	    <Dependency>hypen-devel</Dependency>
         </BuildDependencies>
         <Patches>
             <!--<Patch level="1">fix-footnote-crash.patch</Patch>
@@ -218,8 +218,8 @@
 	    <Dependency>libexttextcat</Dependency>
 	    <Dependency>mdds</Dependency>
 	    <Dependency>xmlsec</Dependency>
-	    <!--<Dependency>libcmis</Dependency>
-	    <Dependency>libcdr-devel</Dependency>-->
+	    <Dependency>libcmis</Dependency>
+	    <Dependency>libcdr</Dependency>
         </RuntimeDependencies>
         <Files>
             <Path fileType="config">/etc</Path>
