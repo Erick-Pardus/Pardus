@@ -22,9 +22,9 @@ def setup():
 				    --with-system-orcus \
 				    --with-system-xmlsec \
 				    --with-system-hypen \
-				    --with-system-libcmis \
+				    --with-system-libcmis \				    
+				    --with-system-libcdr \
 				    --without-system-clucene \
-				    --without-system-libcdr \
 				    --without-system-libmspub \
 				    --without-system-altlinuxhyph \
 				    --without-system-liblangtag \
