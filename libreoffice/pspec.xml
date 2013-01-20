@@ -81,9 +81,9 @@
             <Dependency>libXinerama-devel</Dependency>
             <Dependency>libXrandr-devel</Dependency>
             <Dependency>libXt-devel</Dependency>
-            <Dependency versionFrom="0.9.0">libwpd-devel</Dependency>
-            <Dependency versionFrom="0.2.0">libwpg-devel</Dependency>
-            <Dependency versionFrom="0.2.0">libwps-devel</Dependency>
+            <Dependency>libwpd-devel</Dependency>
+            <Dependency>libwpg-devel</Dependency>
+            <Dependency>libwps-devel</Dependency>
             <Dependency>libxslt-devel</Dependency>
             <Dependency>lpsolve-devel</Dependency>
             <Dependency>mdbtools-devel</Dependency>
@@ -96,7 +96,7 @@
             <Dependency>orbit2-devel</Dependency>
             <Dependency>pango-devel</Dependency>
             <Dependency>perl-Archive-Zip</Dependency>
-            <Dependency versionFrom="0.16.3">poppler-devel</Dependency>
+            <Dependency>poppler-devel</Dependency>
             <Dependency>qt-devel</Dependency>
             <Dependency>recode-devel</Dependency>
             <Dependency>redland-devel</Dependency>
@@ -177,7 +177,7 @@
             <Dependency>gst-plugins-ugly</Dependency>
             <Dependency>gstreamer</Dependency>
             <Dependency>gtk2</Dependency>
-            <Dependency releaseFrom="7">hsqldb-lib</Dependency>
+            <Dependency>hsqldb-lib</Dependency>
             <Dependency>hunspell</Dependency>
             <Dependency>icu4c</Dependency>
             <Dependency>jpeg</Dependency>
@@ -188,9 +188,9 @@
             <Dependency>libXinerama</Dependency>
             <Dependency>libXrandr</Dependency>
             <Dependency>libXt</Dependency>
-            <Dependency versionFrom="0.9.0">libwpd</Dependency>
-            <Dependency versionFrom="0.2.0">libwpg</Dependency>
-            <Dependency versionFrom="0.2.0">libwps</Dependency>
+            <Dependency>libwpd</Dependency>
+            <Dependency>libwpg</Dependency>
+            <Dependency>libwps</Dependency>
             <Dependency>libxslt</Dependency>
             <Dependency>lpsolve</Dependency>
             <Dependency>mdbtools</Dependency>
@@ -201,7 +201,7 @@
             <Dependency>openldap-client</Dependency>
             <Dependency>orbit2</Dependency>
             <Dependency>pango</Dependency>
-            <Dependency versionFrom="0.16.3">poppler</Dependency>
+            <Dependency>poppler</Dependency>
             <Dependency>qt</Dependency>
             <Dependency>redland</Dependency>
             <Dependency>sun-jre</Dependency>
