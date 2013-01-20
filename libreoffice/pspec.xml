@@ -13,17 +13,15 @@
         <IsA>app:gui</IsA>
         <Summary>LibreOffice office suite</Summary>
         <Description>LibreOffice is an open source, multi-platform office productivity suite. It includes key desktop applications such as a word processor, a spreadsheet application, a presentation creator-viewer, a formula editor and a drawing program, with a user interface and feature set similar to other office suites. Sophisticated and flexible, LibreOffice also works transparently with a variety of file formats, including those of Microsoft Office.</Description>
-        <Archive sha1sum="eca41cc2448eda89d7105176b2b6aa3e79c05092" type="tarxz">http://download.documentfoundation.org/libreoffice/src/4.0.0/libreoffice-4.0.0.0.beta2.tar.xz</Archive>
-	<Archive sha1sum="576c8f81fc6e3b78634ea307a9ea8b004cd29610" type="binary" target="libreoffice-4.0.0.0.beta2/src">http://ftp.linux.org.tr/tdf/libreoffice/src/4.0.0/libreoffice-translations-4.0.0.0.beta2.tar.xz</Archive>	
-	<Archive sha1sum="6c9034a13957676532725fb60c8cb0d6b129de14" type="binary" target="libreoffice-4.0.0.0.beta2/src">http://ftp.linux.org.tr/tdf/libreoffice/src/4.0.0/libreoffice-help-4.0.0.0.beta2.tar.xz</Archive>
+        <Archive sha1sum="eca41cc2448eda89d7105176b2b6aa3e79c05092" type="tarxz">http://download.documentfoundation.org/libreoffice/src/4.0.0/libreoffice-4.0.0.1.tar.xz</Archive>
+	<Archive sha1sum="576c8f81fc6e3b78634ea307a9ea8b004cd29610" type="binary" target="libreoffice-4.0.0.0.beta2/src">http://download.documentfoundation.org/libreoffice/src/4.0.0/libreoffice-translations-4.0.0.1.tar.xz</Archive>	
+	<Archive sha1sum="6c9034a13957676532725fb60c8cb0d6b129de14" type="binary" target="libreoffice-4.0.0.0.beta2/src">http://download.documentfoundation.org/libreoffice/src/4.0.0/libreoffice-help-4.0.0.1.tar.xz</Archive>
 	<Archive sha1sum="5c604f102e0716597b3d2659ac3e77f80a02f22d" type="binary" target="libreoffice-4.0.0.0.beta2/src">http://dev-www.libreoffice.org/src/2c9b0f83ed5890af02c0df1c1776f39b-commons-httpclient-3.1-src.tar.gz</Archive>
 	<Archive sha1sum="efc1ab026e8e9ac4cd150cb4cf1b7e4663cddc84" type="binary" target="libreoffice-4.0.0.0.beta2/src">http://dev-www.libreoffice.org/src/2ae988b339daec234019a7066f96733e-commons-lang-2.3-src.tar.gz</Archive>
 	<Archive sha1sum="9408c7ebfba2e64065bc09016192e8513ba949a0" type="binary" target="libreoffice-4.0.0.0.beta2/src">http://dev-www.libreoffice.org/src/3c219630e4302863a9a83d0efde889db-commons-logging-1.1.1-src.tar.gz</Archive>
 	<Archive sha1sum="51537a09aa546336b0477c70077f3e21d857caa7" type="binary" target="libreoffice-4.0.0.0.beta2/src">http://dev-www.libreoffice.org/src/ea570af93c284aa9e5621cd563f54f4d-bsh-2.0b1-src.tar.gz</Archive>
 	<Archive sha1sum="76d6788e747e78abb5abf8eaad78d3342da5f2a4" type="binary" target="libreoffice-4.0.0.0.beta2/src">http://dev-www.libreoffice.org/src/48d647fbd8ef8889e5a7f422c1bfda94-clucene-core-2.3.3.4.tar.gz</Archive>
-	<Archive sha1sum="b571f9d94e379edd18b4b5b87291262c63313962" type="binary" target="libreoffice-4.0.0.0.beta2/src">http://dev-www.libreoffice.org/src/b2371dc7cf4811c9d32146eec913d296-libcmis-0.3.0.tar.gz</Archive>
 	<Archive sha1sum="7168b0f40aa5c72267899601c116d2348d2f56ec" type="binary" target="libreoffice-4.0.0.0.beta2/src">http://dev-www.libreoffice.org/src/17410483b5b5f267aa18b7e00b65e6e0-hsqldb_1_8_0.zip</Archive>
-	<Archive sha1sum="4481ed35d147d2d67dccf49cb483ec8744e17ab7" type="binary" target="libreoffice-4.0.0.0.beta2/src">http://dev-www.libreoffice.org/src/a2f6010987e1c601274ab5d63b72c944-hyphen-2.8.4.tar.gz</Archive>
 	<Archive sha1sum="1acd76cd63f7b19f6a0252eb029c3cb13a25aa9b" type="binary" target="libreoffice-4.0.0.0.beta2/src">http://dev-www.libreoffice.org/src/ba2930200c9f019c2d93a8c88c651a0f-flow-engine-0.9.4.zip</Archive>
 	<Archive sha1sum="3478ebc27bb76025f4b5c2ae6a9bac6090e2cb09" type="binary" target="libreoffice-4.0.0.0.beta2/src">http://dev-www.libreoffice.org/src/d8bd5eed178db6e2b18eeed243f85aa8-flute-1.1.6.zip</Archive>
 	<Archive sha1sum="43a7ff11dd15370d456b20a093e1ee81279163a0" type="binary" target="libreoffice-4.0.0.0.beta2/src">http://dev-www.libreoffice.org/src/eeb2c7ddf0d302fba4bfc6e97eac9624-libbase-1.1.6.zip</Archive>
@@ -875,162 +873,12 @@
     </Package>
 
     <History>
-        <Update release="22">
-            <Date>2012-12-26</Date>
-	    <Version>4.0.0</Version>
-            <Comment>Version bump to 3.6.4.3</Comment>
+        <Update release="1">
+            <Date>2013-01-20</Date>
+	    <Version>4.0.0.1</Version>
+            <Comment>First Release</Comment>
             <Name>Osman Erkan</Name>
             <Email>osman.erkan@yandex.xom</Email>
-        </Update>
-        <Update release="21">
-            <Date>2011-09-28</Date>
-            <Version>3.4.3.2</Version>
-            <Comment>Fix a critical bug causing crash and data loss: PB#18951</Comment>
-            <Name>Bertan Gündoğdu</Name>
-            <Email>bertan@pardus.org.tr</Email>
-        </Update>
-        <Update release="20">
-            <Date>2011-09-12</Date>
-            <Version>3.4.3.2</Version>
-            <Comment>Version bump to 3.4.3.2</Comment>
-            <Name>Bertan Gündoğdu</Name>
-            <Email>bertan@pardus.org.tr</Email>
-        </Update>
-        <Update release="19">
-            <Date>2011-08-16</Date>
-            <Version>3.4.2.3</Version>
-            <Comment>Force UI to use Gnome open/save dialogs.</Comment>
-            <Name>Gökçen Eraslan</Name>
-            <Email>gokcen@pardus.org.tr</Email>
-        </Update>
-        <Update release="18">
-            <Date>2011-08-11</Date>
-            <Version>3.4.2.3</Version>
-            <Comment>Fix to a horizontal scrollbar issue caused by kde implementation of LibreOffice. (KDE#277453)</Comment>
-            <Name>Bertan Gündoğdu</Name>
-            <Email>bertan@pardus.org.tr</Email>
-        </Update>
-        <Update release="17">
-            <Date>2011-08-02</Date>
-            <Version>3.4.2.3</Version>
-            <Comment>Version bump to 3.4.2.3</Comment>
-            <Name>Gökçen Eraslan</Name>
-            <Email>gokcen@pardus.org.tr</Email>
-        </Update>
-        <Update release="16">
-            <Date>2011-07-10</Date>
-            <Version>3.4.1.3</Version>
-            <Comment>Fix Send as email option, make it use xdg-email.</Comment>
-            <Name>Gökçen Eraslan</Name>
-            <Email>gokcen@pardus.org.tr</Email>
-        </Update>
-        <Update release="15">
-            <Date>2011-07-07</Date>
-            <Version>3.4.1.3</Version>
-            <Comment>Version bump to 3.4.1.3 (https://www.libreoffice.org/download/3-4-new-features-and-fixes/ for details)</Comment>
-            <Requires>
-                <Action package="libreoffice">reverseDependencyUpdate</Action>
-            </Requires>
-            <Name>Gökçen Eraslan</Name>
-            <Email>gokcen@pardus.org.tr</Email>
-        </Update>
-        <Update release="14">
-            <Date>2011-03-22</Date>
-            <Version>3.3.2.2</Version>
-            <Comment>Version bump to 3.3.2.2</Comment>
-            <Name>Gökçen Eraslan</Name>
-            <Email>gokcen@pardus.org.tr</Email>
-        </Update>
-        <Update release="13">
-            <Date>2011-03-22</Date>
-            <Version>3.3.2.1</Version>
-            <Comment>Strictly depend on the new poppler</Comment>
-            <Name>Ozan Çağlayan</Name>
-            <Email>ozan@pardus.org.tr</Email>
-        </Update>
-        <Update release="12">
-            <Date>2011-03-14</Date>
-            <Version>3.3.2.1</Version>
-            <Comment>Version bump to 3.3.2.1</Comment>
-            <Name>Gökçen Eraslan</Name>
-            <Email>gokcen@pardus.org.tr</Email>
-        </Update>
-        <Update release="11">
-            <Date>2011-02-12</Date>
-            <Version>3.3.1.1</Version>
-            <Comment>Version bump to 3.3.1.1</Comment>
-            <Name>Gökçen Eraslan</Name>
-            <Email>gokcen@pardus.org.tr</Email>
-        </Update>
-        <Update release="10">
-            <Date>2011-01-24</Date>
-            <Version>3.3.0.4</Version>
-            <Comment>Version bump to 3.3.0.4</Comment>
-            <Name>Gökçen Eraslan</Name>
-            <Email>gokcen@pardus.org.tr</Email>
-        </Update>
-        <Update release="9">
-            <Date>2011-01-14</Date>
-            <Version>3.3.0.3</Version>
-            <Comment>Fix binary names, they are prefixed by lo instead of oo, like: lowriter.</Comment>
-            <Name>Gökçen Eraslan</Name>
-            <Email>gokcen@pardus.org.tr</Email>
-        </Update>
-        <Update release="8">
-            <Date>2011-01-13</Date>
-            <Version>3.3.0.3</Version>
-            <Comment>Version bump to 3.3.0.3</Comment>
-            <Name>Gökçen Eraslan</Name>
-            <Email>gokcen@pardus.org.tr</Email>
-        </Update>
-        <Update release="7">
-            <Date>2010-12-27</Date>
-            <Version>3.3.0.2</Version>
-            <Comment>Version bump to 3.3.0.2 and add Russian language packages.</Comment>
-            <Name>Gökçen Eraslan</Name>
-            <Email>gokcen@pardus.org.tr</Email>
-        </Update>
-        <Update release="6">
-            <Date>2010-12-07</Date>
-            <Version>3.3.0.1</Version>
-            <Comment>Version bump to 3.3.0.1</Comment>
-            <Name>Gökçen Eraslan</Name>
-            <Email>gokcen@pardus.org.tr</Email>
-        </Update>
-        <Update release="5">
-            <Date>2010-11-25</Date>
-            <Version>3.2.99.3</Version>
-            <Comment>Fix xls crash bug #14885.</Comment>
-            <Name>Gökçen Eraslan</Name>
-            <Email>gokcen@pardus.org.tr</Email>
-        </Update>
-        <Update release="4">
-            <Date>2010-11-21</Date>
-            <Version>3.2.99.3</Version>
-            <Comment>Version bump to 3.2.99.3</Comment>
-            <Name>Gökçen Eraslan</Name>
-            <Email>gokcen@pardus.org.tr</Email>
-        </Update>
-        <Update release="3">
-            <Date>2010-10-25</Date>
-            <Version>3.2.99.2</Version>
-            <Comment>Bump to 3.2.99.2 and enable cairo to enable hardware acceleration.</Comment>
-            <Name>Gökçen Eraslan</Name>
-            <Email>gokcen@pardus.org.tr</Email>
-        </Update>
-        <Update release="2">
-            <Date>2010-10-13</Date>
-            <Version>3.2.99.1</Version>
-            <Comment>Mass rebuild for Pardus 2011 Beta</Comment>
-            <Name>Gökçen Eraslan</Name>
-            <Email>gokcen@pardus.org.tr</Email>
-        </Update>
-        <Update release="1">
-            <Date>2010-09-30</Date>
-            <Version>3.2.99.1</Version>
-            <Comment>First release</Comment>
-            <Name>Gökçen Eraslan</Name>
-            <Email>gokcen@pardus.org.tr</Email>
         </Update>
     </History>
 </PISI>
