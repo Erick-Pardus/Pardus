@@ -39,8 +39,8 @@
 	<Archive sha1sum="32d2298c78132a629ed2ac6c9830b4d52770ce02" type="binary" target="libreoffice-4.0.0.1/src">http://dev-www.libreoffice.org/src/2a177023f9ea8ec8bd00837605c5df1b-jakarta-tomcat-5.0.30-src.tar.gz</Archive>
 	<Archive sha1sum="452eba922e4f41603539c9dc39947d2271e47093" type="binary" target="libreoffice-4.0.0.1/src">http://dev-www.libreoffice.org/src/0168229624cfac409e766913506961a8-ucpp-1.3.2.tar.gz</Archive>
 	<Archive sha1sum="2d49e11b0b711970f494294dc3698f05eb294853" type="binary" target="libreoffice-4.0.0.1/src">http://dev-www.libreoffice.org/src/a7983f859eafb2677d7ff386a023bc40-xsltml_2.1.2.zip</Archive>
-	<Archive sha1sum="c23500d94d6ade7c2948759b960744ac53da57a3" type="binary" target="libreoffice-4.0.0.1/src">http://dev-www.libreoffice.org/src/71474203939fafbe271e1263e61d083e-nss-3.12.8-with-nspr-4.8.6.tar.gz</Archive>
-	<!--<Archive sha1sum="0619ed3a89644bef318df67db12045b2b590585b" type="binary" target="libreoffice-4.0.0.1/src">http://dev-www.libreoffice.org/src/185d60944ea767075d27247c3162b3bc-unowinreg.dll</Archive>-->
+	<Archive sha1sum="c23500d94d6ade7c2948759b960744ac53da57a3" type="binary" target="libreoffice-4.0.0.1/src">http://dev-www.libreoffice.org/src/a0a861f539f0e7a91d05e6b9457e4db1-nss-3.13.5-with-nspr-4.9.1.tar.gz</Archive>
+	<Archive sha1sum="0619ed3a89644bef318df67db12045b2b590585b" type="binary" target="libreoffice-4.0.0.1/src">http://dev-www.libreoffice.org/extern/185d60944ea767075d27247c3162b3bc-unowinreg.dll</Archive>
 	<!--<Archive sha1sum="fe076115cecbc5fae19ebc7015614acad5b938e5" type="tarxz">http://download.documentfoundation.org/libreoffice/src/3.6.4/libreoffice-core-3.6.4.3.tar.xz</Archive>-->
         <AdditionalFiles>
             <AdditionalFile target="src/openabout_pardus.png" permission="0644">splashes/openabout_pardus.png</AdditionalFile>
@@ -124,6 +124,7 @@
 	    <Dependency>liborcus-devel</Dependency>
 	    <Dependency>libcdr-devel</Dependency>
 	    <Dependency>bluez-libs-devel</Dependency>
+	    <Dependency>sac</Dependency>
         </BuildDependencies>
         <Patches>
             <!--<Patch level="1">fix-footnote-crash.patch</Patch>

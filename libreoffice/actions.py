@@ -20,8 +20,6 @@ def setup():
 				    --without-system-nss \
 				    --with-system-mdds \
 				    --with-system-orcus \
-				    --with-system-xmlsec \
-				    --with-system-hypen \
 				    --with-system-libcmis \
 				    --with-system-libcdr \
 				    --without-system-clucene \
