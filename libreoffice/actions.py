@@ -14,6 +14,7 @@ shelltools.export("HOME", get.workDIR())
 def setup():
     shelltools.system("./autogen.sh --with-jdk-home=/opt/sun-jdk \
 				    --with-system-libs \
+				    --with-lang='' \
 				    --with-system-headers \
 				    --with-system-mozilla \
 				    --with-system-zlib \
@@ -22,10 +23,16 @@ def setup():
 				    --with-system-orcus \
 				    --with-system-libcmis \
 				    --with-system-libcdr \
+				    --with-system-cppunit \
+				    --with-system-graphite \
+				    --with-system-libwpg \
+				    --with-system-libwps \
+				    --with-system-ucpp \				    
+				    --with-system-liblangtag \
+				    --with-system-redland\
 				    --without-system-clucene \
 				    --without-system-libmspub \
 				    --without-system-altlinuxhyph \
-				    --without-system-liblangtag \
 				    --without-system-jars \
 				    --without-system-hsqldb \
 				    --disable-mathmldtd \
@@ -36,7 +43,7 @@ def setup():
 				    --enable-dbus \
 				    --enable-opengl \
 				    --enable-vba \
-				    --enable-gtk \
+				    --disable-gtk \
 				    --enable-ext-presenter-minimizer \
 				    --enable-ext-nlpsolver \
 				    --enable-ext-wiki-publisher \

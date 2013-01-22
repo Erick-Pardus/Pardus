@@ -20,8 +20,8 @@
 	<Archive sha1sum="efc1ab026e8e9ac4cd150cb4cf1b7e4663cddc84" type="binary" target="libreoffice-4.0.0.1/src">http://dev-www.libreoffice.org/src/2ae988b339daec234019a7066f96733e-commons-lang-2.3-src.tar.gz</Archive>
 	<Archive sha1sum="9408c7ebfba2e64065bc09016192e8513ba949a0" type="binary" target="libreoffice-4.0.0.1/src">http://dev-www.libreoffice.org/src/3c219630e4302863a9a83d0efde889db-commons-logging-1.1.1-src.tar.gz</Archive>
 	<Archive sha1sum="51537a09aa546336b0477c70077f3e21d857caa7" type="binary" target="libreoffice-4.0.0.1/src">http://dev-www.libreoffice.org/src/ea570af93c284aa9e5621cd563f54f4d-bsh-2.0b1-src.tar.gz</Archive>
-	<Archive sha1sum="76d6788e747e78abb5abf8eaad78d3342da5f2a4" type="binary" target="libreoffice-4.0.0.1/src">http://dev-www.libreoffice.org/src/48d647fbd8ef8889e5a7f422c1bfda94-clucene-core-2.3.3.4.tar.gz</Archive>
 	<Archive sha1sum="7168b0f40aa5c72267899601c116d2348d2f56ec" type="binary" target="libreoffice-4.0.0.1/src">http://dev-www.libreoffice.org/src/17410483b5b5f267aa18b7e00b65e6e0-hsqldb_1_8_0.zip</Archive>
+	<Archive sha1sum="76d6788e747e78abb5abf8eaad78d3342da5f2a4" type="binary" target="libreoffice-4.0.0.1/src">http://dev-www.libreoffice.org/src/48d647fbd8ef8889e5a7f422c1bfda94-clucene-core-2.3.3.4.tar.gz</Archive>
 	<Archive sha1sum="1acd76cd63f7b19f6a0252eb029c3cb13a25aa9b" type="binary" target="libreoffice-4.0.0.1/src">http://dev-www.libreoffice.org/src/ba2930200c9f019c2d93a8c88c651a0f-flow-engine-0.9.4.zip</Archive>
 	<Archive sha1sum="3478ebc27bb76025f4b5c2ae6a9bac6090e2cb09" type="binary" target="libreoffice-4.0.0.1/src">http://dev-www.libreoffice.org/src/d8bd5eed178db6e2b18eeed243f85aa8-flute-1.1.6.zip</Archive>
 	<Archive sha1sum="43a7ff11dd15370d456b20a093e1ee81279163a0" type="binary" target="libreoffice-4.0.0.1/src">http://dev-www.libreoffice.org/src/eeb2c7ddf0d302fba4bfc6e97eac9624-libbase-1.1.6.zip</Archive>
@@ -33,11 +33,9 @@
 	<Archive sha1sum="5ecb895ffc1eff2c381fa78d2197d0c57422b3df" type="binary" target="libreoffice-4.0.0.1/src">http://dev-www.libreoffice.org/src/f94d9870737518e3b597f9265f4e9803-libserializer-1.1.6.zip</Archive>
 	<Archive sha1sum="b19ad429273abb116432eae3af955ecaf1ab5b17" type="binary" target="libreoffice-4.0.0.1/src">http://dev-www.libreoffice.org/src/ace6ab49184e329db254e454a010f56d-libxml-1.1.7.zip</Archive>
 	<Archive sha1sum="b92930010622906778f713fb8f0153fa0683d018" type="binary" target="libreoffice-4.0.0.1/src">http://dev-www.libreoffice.org/src/39bb3fcea1514f1369fcfc87542390fd-sacjava-1.3.zip</Archive>
-	<Archive sha1sum="35b89dfd49ee1e23716d5bff287aa11636801a90" type="binary" target="libreoffice-4.0.0.1/src">http://dev-www.libreoffice.org/src/54e578c91b1b68e69c72be22adcb2195-liblangtag-0.4.0.tar.bz2</Archive>
 	<Archive sha1sum="8a90669029e107b61953b90ba11545fef586c2ca" type="binary" target="libreoffice-4.0.0.1/src">http://dev-www.libreoffice.org/src/798b2ffdc8bcfe7bca2cf92b62caf685-rhino1_5R5.zip</Archive>
 	<Archive sha1sum="1acea86fd399ed7817879d36370d3d1f8b109050" type="binary" target="libreoffice-4.0.0.1/src">http://dev-www.libreoffice.org/src/35c94d2df8893241173de1d16b6034c0-swingExSrc.zip</Archive>
 	<Archive sha1sum="32d2298c78132a629ed2ac6c9830b4d52770ce02" type="binary" target="libreoffice-4.0.0.1/src">http://dev-www.libreoffice.org/src/2a177023f9ea8ec8bd00837605c5df1b-jakarta-tomcat-5.0.30-src.tar.gz</Archive>
-	<Archive sha1sum="452eba922e4f41603539c9dc39947d2271e47093" type="binary" target="libreoffice-4.0.0.1/src">http://dev-www.libreoffice.org/src/0168229624cfac409e766913506961a8-ucpp-1.3.2.tar.gz</Archive>
 	<Archive sha1sum="2d49e11b0b711970f494294dc3698f05eb294853" type="binary" target="libreoffice-4.0.0.1/src">http://dev-www.libreoffice.org/src/a7983f859eafb2677d7ff386a023bc40-xsltml_2.1.2.zip</Archive>
 	<Archive sha1sum="c23500d94d6ade7c2948759b960744ac53da57a3" type="binary" target="libreoffice-4.0.0.1/src">http://dev-www.libreoffice.org/src/a0a861f539f0e7a91d05e6b9457e4db1-nss-3.13.5-with-nspr-4.9.1.tar.gz</Archive>
 	<Archive sha1sum="0619ed3a89644bef318df67db12045b2b590585b" type="binary" target="libreoffice-4.0.0.1/src">http://dev-www.libreoffice.org/extern/185d60944ea767075d27247c3162b3bc-unowinreg.dll</Archive>
@@ -124,7 +122,8 @@
 	    <Dependency>liborcus-devel</Dependency>
 	    <Dependency>libcdr-devel</Dependency>
 	    <Dependency>bluez-libs-devel</Dependency>
-	    <Dependency>sac</Dependency>
+	    <Dependency>ucpp-devel</Dependency>
+	    <Dependency>liblangtag-devel</Dependency>
         </BuildDependencies>
         <Patches>
             <!--<Patch level="1">fix-footnote-crash.patch</Patch>
@@ -227,7 +226,9 @@
 	    <Dependency>hypen</Dependency>
 	    <Dependency>liborcus</Dependency>
 	    <Dependency>libcdr</Dependency>
-	    <Dependency>bluez-libs</Dependency>
+	    <Dependency>bluez-libs</Dependency>	    
+	    <Dependency>ucpp</Dependency>	    
+	    <Dependency>liblangtag</Dependency>
         </RuntimeDependencies>
         <Files>
             <Path fileType="config">/etc</Path>
