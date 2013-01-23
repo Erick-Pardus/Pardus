@@ -124,6 +124,7 @@
 	    <Dependency>bluez-libs-devel</Dependency>
 	    <Dependency>ucpp-devel</Dependency>
 	    <Dependency>liblangtag-devel</Dependency>
+	    <Dependency>libmspub-devel</Dependency>
         </BuildDependencies>
         <Patches>
             <!--<Patch level="1">fix-footnote-crash.patch</Patch>
@@ -159,6 +160,14 @@
             <Patch level="1">fedora/0001-Resolves-rhbz-715549-use-fontconfig-s-detected-forma.patch</Patch>-->
 	    <Patch level="1">libreoffice-3.7-system-pyuno.patch</Patch>
 	    <Patch level="1">libreoffice-3.7-separate-checks.patch</Patch>
+	    <Patch level="0">001-svids.patch</Patch>
+	    <Patch level="0">002-svids.patch</Patch>
+	    <Patch level="0">003-svids.patch</Patch>
+	    <Patch level="0">004-svids.patch</Patch>
+	    <Patch level="0">005-svids.patch</Patch>
+	    <Patch level="0">006-svids.patch</Patch>
+	    <Patch level="0">007-svids.patch</Patch>
+	    <Patch level="0">008-svids.patch</Patch>
         </Patches>
     </Source>
 
@@ -228,7 +237,8 @@
 	    <Dependency>libcdr</Dependency>
 	    <Dependency>bluez-libs</Dependency>	    
 	    <Dependency>ucpp</Dependency>	    
-	    <Dependency>liblangtag</Dependency>
+	    <Dependency>liblangtag</Dependency>	    
+	    <Dependency>libmspub</Dependency>
         </RuntimeDependencies>
         <Files>
             <Path fileType="config">/etc</Path>

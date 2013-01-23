@@ -9,16 +9,29 @@ from pisi.actionsapi import pisitools
 from pisi.actionsapi import shelltools
 from pisi.actionsapi import get
 
+import glob
+
 shelltools.export("HOME", get.workDIR())
 
-def setup():
-    shelltools.system("./autogen.sh --with-jdk-home=/opt/sun-jdk \
-				    --with-system-libs \
+AppDir = "/opt/LibreOffice"
+NoStrip = ["%s/lib/libreoffice/basis-link/share" % AppDir, "%s/lib/libreoffice/share" % AppDir]
+
+def getJobCount():
+    # If jobs field in pisi.conf is greater than 1, use 'this value - 1' as number of cpus. There is also a max-jobs configure opt. but it's buggy now
+    return max(int(get.makeJOBS().strip().replace("-j", "")) - 1, 8)
+
+def setup():  
+        # Remove previous Linux build scripts if any
+    for f in glob.glob("Linux*Set.sh"):
+        shelltools.unlink(f)
+
+    autotools.autoconf("-f")
+    
+    shelltools.system("./autogen.sh --with-system-libs \
 				    --with-lang='' \
 				    --with-system-headers \
 				    --with-system-mozilla \
 				    --with-system-zlib \
-				    --without-system-nss \
 				    --with-system-mdds \
 				    --with-system-orcus \
 				    --with-system-libcmis \
@@ -27,37 +40,23 @@ def setup():
 				    --with-system-graphite \
 				    --with-system-libwpg \
 				    --with-system-libwps \
-				    --with-system-ucpp \				    
+				    --with-system-ucpp \
 				    --with-system-liblangtag \
-				    --with-system-redland\
+				    --with-x \
+				    --with-system-redland \
+				    --with-system-libmspub \
+				    --without-system-dicts \
+				    --without-system-nss \
+				    --without-afms \
+				    --without-fonts \
+				    --without-myspell-dicts \
 				    --without-system-clucene \
-				    --without-system-libmspub \
 				    --without-system-altlinuxhyph \
 				    --without-system-jars \
 				    --without-system-hsqldb \
-				    --disable-mathmldtd \
-				    --disable-epm \
-				    --disable-gnome-vfs \
-				    --enable-gio \
-				    --enable-symbols \
-				    --enable-dbus \
-				    --enable-opengl \
-				    --enable-vba \
-				    --disable-gtk \
-				    --enable-ext-presenter-minimizer \
-				    --enable-ext-nlpsolver \
-				    --enable-ext-wiki-publisher \
 				    --with-servlet-api-jar=/usr/share/java/servlet-api.jar \
-				    --with-system-mythes \
-				    --with-system-dicts \
-				    --with-external-dict-dir=/usr/share/myspell \
-				    --without-myspell-dicts \
-				    --without-fonts \
-				    --without-ppds \
-				    --without-afms \
-				    --disable-gstreamer \
-				    --with-vendor='Pardus' \
-				    --enable-fetch-external ")
+				    --with-jdk-home=/opt/sun-jdk \
+				    --with-external-dict-dir=/usr/share/myspell ")
 
     #--without-system-hsqldb \ libreoffice hsqldb 1.8.0 üzerini desteklemiyor.
 
