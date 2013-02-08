@@ -1,0 +1,24 @@
+<?xml version="1.0" ?>
+<PISI>
+    <Source>
+        <Name>vtk</Name>
+        <Summary xml:lang="tr">Görüntüleme Araç Kiti - Yüksek seviyeli bir 3 boyutlu görüntüleme kitaplığı</Summary>
+        <Description xml:lang="tr">vtk, görüntü işleme, 3 boyutlu grafik, hacim tarama ve görüntüleme için kullanılan açık kaynaklı bir altyapıdır. VTK gelişmiş bir çok algoritma ve tarama tekniği içerir.</Description>
+    </Source>
+
+    <Package>
+        <Name>python-vtk</Name>
+        <Summary xml:lang="tr">VTK için Python bağlayıcısı</Summary>
+    </Package>
+
+    <Package>
+        <Name>qt-vtk</Name>
+        <Summary xml:lang="tr">Qt için Python bağlayıcısı</Summary>
+    </Package>
+
+    <Package>
+        <Name>vtk-devel</Name>
+        <Summary xml:lang="tr">VTK için geliştirme dosyaları</Summary>
+    </Package>
+</PISI>
+

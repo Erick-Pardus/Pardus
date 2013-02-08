@@ -1,0 +1,13 @@
+Index: VTK/Infovis/vtkBoostBreadthFirstSearchTree.cxx
+===================================================================
+--- VTK.orig/Infovis/vtkBoostBreadthFirstSearchTree.cxx
++++ VTK/Infovis/vtkBoostBreadthFirstSearchTree.cxx
+@@ -249,7 +249,7 @@ int vtkBoostBreadthFirstSearchTree::Requ
+     vtkDirectedGraph *g = vtkDirectedGraph::SafeDownCast(input);
+     if (this->ReverseEdges)
+       {
+-#if BOOST_VERSION < 104100      // Boost 1.41.x
++#if 1      // Boost 1.41.x
+       vtkErrorMacro("ReverseEdges requires Boost 1.41.x or higher");
+       return 0;
+ #else

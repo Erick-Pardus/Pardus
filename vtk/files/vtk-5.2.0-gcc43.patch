@@ -1,0 +1,33 @@
+--- VTK/Utilities/DICOMParser/DICOMAppHelper.cxx.gcc43	2008-03-19 21:22:17.000000000 +0100
++++ VTK/Utilities/DICOMParser/DICOMAppHelper.cxx	2008-10-05 11:46:08.000000000 +0200
+@@ -32,7 +32,7 @@
+ #include <stdlib.h>
+ #include <stdio.h>
+ #include <string.h>
+-#include <string>
++#include <cstring>
+ #include <math.h>
+ #include <algorithm>
+ #if defined(__BORLANDC__)
+--- VTK/Utilities/DICOMParser/DICOMFile.cxx.gcc43	2008-03-19 21:22:17.000000000 +0100
++++ VTK/Utilities/DICOMParser/DICOMFile.cxx	2008-10-05 11:46:02.000000000 +0200
+@@ -27,7 +27,7 @@
+ 
+ #include <stdio.h>
+ #include <string.h>
+-#include <string>
++#include <cstring>
+ 
+ DICOMFile::DICOMFile() : InputStream()
+ {
+--- VTK/Utilities/DICOMParser/DICOMParser.cxx.gcc43	2008-07-21 19:03:03.000000000 +0200
++++ VTK/Utilities/DICOMParser/DICOMParser.cxx	2008-10-05 11:45:56.000000000 +0200
+@@ -40,7 +40,7 @@
+ #endif
+ 
+ #include <string.h>
+-#include <string>
++#include <cstring>
+ 
+ // Define DEBUG_DICOM to get debug messages sent to dicom_stream::cerr
+ // #define DEBUG_DICOM

@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE PISI SYSTEM "http://www.pardus.org.tr/projeler/pisi/pisi-spec.dtd">
+<PISI>
+    <Source>
+        <Name>vtk</Name>
+        <Homepage>http://www.vtk.org/</Homepage>
+        <Packager>
+            <Name>Beyza Ermis</Name>
+            <Email>beyza@pardus.org.tr</Email>
+        </Packager>
+        <License>BSD</License>
+        <IsA>app:gui</IsA>
+        <IsA>library</IsA>
+        <Summary>The Visualization Toolkit - A high level 3D visualization library</Summary>
+        <Description>VTK is an open-source software system for image processing, 3D graphics, volume rendering and visualization. VTK includes many advanced algorithms (e.g., surface reconstruction, implicit modelling, decimation) and rendering techniques (e.g., hardware-accelerated volume rendering, LOD control).</Description>
+        <Archive sha1sum="ece52f4fa92811fe927581e60ecb39a8a5f68cd9" type="targz">http://www.vtk.org/files/release/5.8/vtk-5.8.0.tar.gz</Archive>
+        <BuildDependencies>
+            <Dependency>wget</Dependency>
+            <Dependency>gnuplot</Dependency>
+            <Dependency>doxygen</Dependency>
+            <Dependency>graphviz</Dependency>
+            <Dependency>qt-devel</Dependency>
+            <Dependency>mysql-lib</Dependency>
+            <Dependency>hdf5-devel</Dependency>
+            <Dependency>mesa-devel</Dependency>
+            <Dependency>tiff-devel</Dependency>
+            <Dependency>jpeg-devel</Dependency>
+            <Dependency>tcltk-devel</Dependency>
+            <Dependency>gl2ps-devel</Dependency>
+            <Dependency>libXt-devel</Dependency>
+            <Dependency>boost-devel</Dependency>
+            <Dependency>libX11-devel</Dependency>
+            <Dependency>libICE-devel</Dependency>
+            <Dependency>libXext-devel</Dependency>
+            <Dependency>freetype-devel</Dependency>
+            <Dependency>postgresql-lib</Dependency>
+            <Dependency>libtheora-devel</Dependency>
+            <Dependency>qt-webkit-devel</Dependency>
+        </BuildDependencies>
+        <Patches>
+            <Patch level="1">vtk-5.2.0-gcc43.patch</Patch>
+            <Patch level="1">vtk-5.6.1-system.patch</Patch>
+            <Patch level="1">fix-boost-ftbfs.patch</Patch>
+        </Patches>
+    </Source>
+
+    <Package>
+        <Name>vtk</Name>
+        <RuntimeDependencies>
+            <Dependency>qt</Dependency>
+            <Dependency>tcl</Dependency>
+            <Dependency>tiff</Dependency>
+            <Dependency>mesa</Dependency>
+            <Dependency>jpeg</Dependency>
+            <Dependency>tcltk</Dependency>
+            <Dependency>gl2ps</Dependency>
+            <Dependency>libXt</Dependency>
+            <Dependency>boost</Dependency>
+            <Dependency>libogg</Dependency>
+            <Dependency>freetype</Dependency>
+            <Dependency>graphviz</Dependency>
+            <Dependency>mysql-lib</Dependency>
+            <Dependency>libtheora</Dependency>
+            <Dependency>postgresql-lib</Dependency>
+       </RuntimeDependencies>
+        <Files>
+            <Path fileType="data">/etc/ld.so.conf.d</Path>
+            <Path fileType="executable">/usr/bin</Path>
+            <Path fileType="library">/usr/lib/vtk</Path>
+            <Path fileType="doc">/usr/share/doc/vtk</Path>
+        </Files>
+        <AdditionalFiles>
+            <AdditionalFile owner="root" permission="0644" target="/etc/ld.so.conf.d/vtk.conf">vtk.ld.so.conf</AdditionalFile>
+        </AdditionalFiles>
+    </Package>
+
+    <Package>
+        <Name>python-vtk</Name>
+        <Summary>Python bindings for VTK</Summary>
+        <RuntimeDependencies>
+            <Dependency release="current">vtk</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="library">/usr/lib/python*</Path>
+            <Path fileType="library">/usr/lib/vtk/*PythonD.s*</Path>
+            <Path fileType="executable">/usr/bin/vtkpython</Path>
+            <Path fileType="executable">/usr/bin/vtkWrapPython</Path>
+            <Path fileType="executable">/usr/bin/vtkWrapPythonInit</Path>
+        </Files>
+    </Package>
+
+    <Package>
+        <Name>qt-vtk</Name>
+        <Summary>Qt bindings for VTK</Summary>
+        <RuntimeDependencies>
+            <Dependency release="current">vtk</Dependency>
+            <Dependency>qt</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="library">/usr/lib/qt4</Path>
+            <Path fileType="library">/usr/lib/vtk/libQVTK.so*</Path>
+        </Files>
+    </Package>
+
+    <Package>
+        <Name>vtk-devel</Name>
+        <Summary>Development files for vtk</Summary>
+        <RuntimeDependencies>
+            <Dependency>qt-devel</Dependency>
+            <Dependency>jpeg-devel</Dependency>
+            <Dependency>tiff-devel</Dependency>
+            <Dependency>gl2ps-devel</Dependency>
+            <Dependency>libogg-devel</Dependency>
+            <Dependency>libtheora-devel</Dependency>
+            <Dependency release="current">vtk</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="header">/usr/include/vtk</Path>
+            <Path fileType="executable">/usr/bin/vtkWrapHierarchy</Path>
+            <Path fileType="doc">/usr/lib/vtk/doxygen</Path>
+            <Path fileType="data">/usr/lib/vtk/CMake</Path>
+            <Path fileType="data">/usr/lib/vtk/*.cmake</Path>
+            <Path fileType="data">/usr/lib/vtk/hints</Path>
+        </Files>
+    </Package>
+
+    <History>
+        <Update release="2">
+            <Date>2011-11-23</Date>
+            <Version>5.8.0</Version>
+            <Comment>Version bump</Comment>
+            <Name>Ozan Çağlayan</Name>
+            <Email>ozan@pardus.org.tr</Email>
+        </Update>
+        <Update release="1">
+            <Date>2011-04-27</Date>
+            <Version>5.6</Version>
+            <Comment>First release</Comment>
+            <Name>Beyza Ermis</Name>
+            <Email>beyza@pardus.org.tr</Email>
+        </Update>
+    </History>
+</PISI>
