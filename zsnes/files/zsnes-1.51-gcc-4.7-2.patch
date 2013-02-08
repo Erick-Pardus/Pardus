@@ -1,0 +1,10 @@
+--- parsegen.cpp.OSmanOS	2007-10-31 06:30:26.000000000 +0200
++++ parsegen.cpp	2013-02-08 18:35:57.535023208 +0200
+@@ -31,6 +31,7 @@
+ #include <sstream>
+ #include <set>
+ #include <stack>
++#include <cstring>
+ using namespace std;
+ 
+ #include <errno.h>

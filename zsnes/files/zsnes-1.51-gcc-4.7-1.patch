@@ -1,0 +1,12 @@
+--- tools/strutil.h.OSmanOS	2006-12-27 13:04:05.000000000 +0200
++++ tools/strutil.h		2013-02-08 18:31:51.504030477 +0200
+@@ -24,6 +24,9 @@
+ 
+ #include <string>
+ #include <vector>
++#include <cstdlib>
++#include <unistd.h>
++#include <cstring>
+ #include <cctype>
+ 
+ struct ci_char_traits : public std::char_traits<char>

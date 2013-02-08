@@ -1,0 +1,11 @@
+--- tools/depbuild.cpp.OSmanOS	2006-12-27 13:04:05.000000000 +0200
++++ tools/depbuild.cpp	2013-02-08 17:46:28.654110929 +0200
+@@ -24,6 +24,8 @@
+ #include <iostream>
+ #include <string>
+ #include <cstdio>
++#include <cstdlib>
++#include <unistd.h>
+ using namespace std;
+ 
+ #include "fileutil.h"

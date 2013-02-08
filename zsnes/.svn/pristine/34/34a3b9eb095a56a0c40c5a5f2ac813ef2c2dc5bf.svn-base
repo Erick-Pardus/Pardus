@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=zsnes
+Comment=Super Nintendo Emulator
+Comment[tr]=Süper Nintendo Emülatörü
+Exec=zsnes
+Icon=zsnes.png
+Terminal=false
+Type=Application
+MimeType=application/x-snes-rom
+Categories=Application;Game;Emulator
+StartupNotify=false

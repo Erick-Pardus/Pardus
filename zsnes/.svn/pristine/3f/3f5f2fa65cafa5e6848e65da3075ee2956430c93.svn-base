@@ -1,0 +1,8 @@
+<?xml version="1.0" ?>
+<PISI>
+    <Source>
+        <Name>zsnes</Name>
+        <Summary xml:lang="tr">Super Nintendo öykünücüsü</Summary>
+        <Description xml:lang="tr">Mevcut en hızlı ve uyumlu Süper Nintendo öykünücüsüdür. Ancak oyunların romlarını kendiniz temin etmek durumundasınız.</Description>
+    </Source>
+</PISI>
