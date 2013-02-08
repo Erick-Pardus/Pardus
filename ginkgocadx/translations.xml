@@ -1,0 +1,8 @@
+<?xml version="1.0" ?>
+<PISI>
+    <Source>
+        <Name>ginkgocadx</Name>
+        <Summary xml:lang="en">Ginkgo CADx is a multiplatform (Windows, Linux, Mac OSX) DICOM viewer and dicomizer</Summary>
+        <Description xml:lang="en">Ginkgo CADx is a multiplatform (Windows, Linux, Mac OSX) DICOM viewer and dicomizer. Ginkgo CADx is based in free software (Open Core), so you are free to use and distribute the Open Source version with no cost.</Description>
+    </Source>
+</PISI>

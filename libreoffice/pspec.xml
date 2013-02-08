@@ -13,15 +13,15 @@
         <IsA>app:gui</IsA>
         <Summary>LibreOffice office suite</Summary>
         <Description>LibreOffice is an open source, multi-platform office productivity suite. It includes key desktop applications such as a word processor, a spreadsheet application, a presentation creator-viewer, a formula editor and a drawing program, with a user interface and feature set similar to other office suites. Sophisticated and flexible, LibreOffice also works transparently with a variety of file formats, including those of Microsoft Office.</Description>
-        <Archive sha1sum="2a415df07a190dd7a1adedbae1e936fa9078ba96" type="tarxz">http://download.documentfoundation.org/libreoffice/src/4.0.0/libreoffice-4.0.0.1.tar.xz</Archive>
-	<Archive sha1sum="d1d2542135f76b0dc118a436df00c615cb520f91" type="binary" target="libreoffice-4.0.0.1/src">http://download.documentfoundation.org/libreoffice/src/4.0.0/libreoffice-translations-4.0.0.1.tar.xz</Archive>	
-	<Archive sha1sum="f14e16e1a371be4cb0d93a82ad079e149416383a" type="binary" target="libreoffice-4.0.0.1/src">http://download.documentfoundation.org/libreoffice/src/4.0.0/libreoffice-help-4.0.0.1.tar.xz</Archive>
+        <Archive sha1sum="2a415df07a190dd7a1adedbae1e936fa9078ba96" type="tarxz">http://download.documentfoundation.org/libreoffice/src/4.0.0/libreoffice-4.0.0.3.tar.xz</Archive>
+	<Archive sha1sum="d1d2542135f76b0dc118a436df00c615cb520f91" type="binary" target="libreoffice-4.0.0.1/src">http://download.documentfoundation.org/libreoffice/src/4.0.0/libreoffice-translations-4.0.0.3.tar.xz</Archive>	
+	<Archive sha1sum="f14e16e1a371be4cb0d93a82ad079e149416383a" type="binary" target="libreoffice-4.0.0.1/src">http://download.documentfoundation.org/libreoffice/src/4.0.0/libreoffice-help-4.0.0.3.tar.xz</Archive>
 	<Archive sha1sum="5c604f102e0716597b3d2659ac3e77f80a02f22d" type="binary" target="libreoffice-4.0.0.1/src">http://dev-www.libreoffice.org/src/2c9b0f83ed5890af02c0df1c1776f39b-commons-httpclient-3.1-src.tar.gz</Archive>
 	<Archive sha1sum="efc1ab026e8e9ac4cd150cb4cf1b7e4663cddc84" type="binary" target="libreoffice-4.0.0.1/src">http://dev-www.libreoffice.org/src/2ae988b339daec234019a7066f96733e-commons-lang-2.3-src.tar.gz</Archive>
 	<Archive sha1sum="9408c7ebfba2e64065bc09016192e8513ba949a0" type="binary" target="libreoffice-4.0.0.1/src">http://dev-www.libreoffice.org/src/3c219630e4302863a9a83d0efde889db-commons-logging-1.1.1-src.tar.gz</Archive>
 	<Archive sha1sum="51537a09aa546336b0477c70077f3e21d857caa7" type="binary" target="libreoffice-4.0.0.1/src">http://dev-www.libreoffice.org/src/ea570af93c284aa9e5621cd563f54f4d-bsh-2.0b1-src.tar.gz</Archive>
 	<Archive sha1sum="7168b0f40aa5c72267899601c116d2348d2f56ec" type="binary" target="libreoffice-4.0.0.1/src">http://dev-www.libreoffice.org/src/17410483b5b5f267aa18b7e00b65e6e0-hsqldb_1_8_0.zip</Archive>
-	<Archive sha1sum="76d6788e747e78abb5abf8eaad78d3342da5f2a4" type="binary" target="libreoffice-4.0.0.1/src">http://dev-www.libreoffice.org/src/48d647fbd8ef8889e5a7f422c1bfda94-clucene-core-2.3.3.4.tar.gz</Archive>
+	<!--<Archive sha1sum="76d6788e747e78abb5abf8eaad78d3342da5f2a4" type="binary" target="libreoffice-4.0.0.1/src">http://dev-www.libreoffice.org/src/48d647fbd8ef8889e5a7f422c1bfda94-clucene-core-2.3.3.4.tar.gz</Archive>-->
 	<Archive sha1sum="1acd76cd63f7b19f6a0252eb029c3cb13a25aa9b" type="binary" target="libreoffice-4.0.0.1/src">http://dev-www.libreoffice.org/src/ba2930200c9f019c2d93a8c88c651a0f-flow-engine-0.9.4.zip</Archive>
 	<Archive sha1sum="3478ebc27bb76025f4b5c2ae6a9bac6090e2cb09" type="binary" target="libreoffice-4.0.0.1/src">http://dev-www.libreoffice.org/src/d8bd5eed178db6e2b18eeed243f85aa8-flute-1.1.6.zip</Archive>
 	<Archive sha1sum="43a7ff11dd15370d456b20a093e1ee81279163a0" type="binary" target="libreoffice-4.0.0.1/src">http://dev-www.libreoffice.org/src/eeb2c7ddf0d302fba4bfc6e97eac9624-libbase-1.1.6.zip</Archive>
@@ -117,7 +117,7 @@
 	    <Dependency>libexttextcat-devel</Dependency>
 	    <Dependency>mdds-devel</Dependency>
 	    <Dependency>xmlsec-devel</Dependency>
-	    <Dependency>libcmis-devel</Dependency>
+	    <Dependency>libcmis-0.2-devel</Dependency>
 	    <Dependency>hypen-devel</Dependency>
 	    <Dependency>liborcus-devel</Dependency>
 	    <Dependency>libcdr-devel</Dependency>
@@ -160,14 +160,14 @@
             <Patch level="1">fedora/0001-Resolves-rhbz-715549-use-fontconfig-s-detected-forma.patch</Patch>-->
 	    <Patch level="1">libreoffice-3.7-system-pyuno.patch</Patch>
 	    <Patch level="1">libreoffice-3.7-separate-checks.patch</Patch>
-	    <Patch level="0">001-svids.patch</Patch>
+	    <!--<Patch level="0">001-svids.patch</Patch>
 	    <Patch level="0">002-svids.patch</Patch>
 	    <Patch level="0">003-svids.patch</Patch>
 	    <Patch level="0">004-svids.patch</Patch>
 	    <Patch level="0">005-svids.patch</Patch>
 	    <Patch level="0">006-svids.patch</Patch>
 	    <Patch level="0">007-svids.patch</Patch>
-	    <Patch level="0">008-svids.patch</Patch>
+	    <Patch level="0">008-svids.patch</Patch>-->
         </Patches>
     </Source>
 
@@ -231,7 +231,7 @@
 	    <Dependency>libexttextcat</Dependency>
 	    <Dependency>mdds</Dependency>
 	    <Dependency>xmlsec</Dependency>
-	    <Dependency>libcmis</Dependency>
+	    <Dependency>libcmis-0.2</Dependency>
 	    <Dependency>hypen</Dependency>
 	    <Dependency>liborcus</Dependency>
 	    <Dependency>libcdr</Dependency>
@@ -894,7 +894,7 @@
     <History>
         <Update release="1">
             <Date>2013-01-20</Date>
-	    <Version>4.0.0.1</Version>
+	    <Version>4.0.0.3</Version>
             <Comment>First Release</Comment>
             <Name>Osman Erkan</Name>
             <Email>osman.erkan@yandex.com</Email>

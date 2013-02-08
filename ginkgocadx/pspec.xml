@@ -1,0 +1,52 @@
+<?xml version="1.0" ?>
+<!DOCTYPE PISI SYSTEM "http://www.pardus.org.tr/projeler/pisi/pisi-spec.dtd">
+<PISI>
+    <Source>
+        <Name>ginkgocadx</Name>
+        <Homepage>http://ginkgo-cadx.com</Homepage>
+        <Packager>
+            <Name>Osman Erkan</Name>
+            <Email>osman.erkan@yandex.com</Email>
+        </Packager>
+        <License>LGPLv3</License>
+        <Icon>ginkgocadx</Icon>
+        <IsA>app:gui</IsA>
+        <Summary>Ginkgo CADx is a multiplatform (Windows, Linux, Mac OSX) DICOM viewer and dicomizer.</Summary>
+        <Description>Ginkgo CADx is a multiplatform (Windows, Linux, Mac OSX) DICOM viewer and dicomizer. Ginkgo CADx is based in free software (Open Core), so you are free to use and distribute the Open Source version with no cost.</Description>
+        <Archive sha1sum="125b8475edf5e67a3dc6205c89e8196b4261e12b" type="targz">http://sourceforge.net/projects/ginkgocadx/files/3.1.0/ginkgocadx-3.1.0.498.20.tar.gz</Archive>
+        <BuildDependencies>
+            <Dependency>wxGTK-devel</Dependency>
+            <Dependency>freetype-devel</Dependency>
+            <Dependency>gtk2-devel</Dependency>
+        </BuildDependencies>
+    </Source>
+
+    <Package>
+        <Name>ginkgocadx</Name>
+        <RuntimeDependencies>
+            <Dependency>wxGTK</Dependency>
+            <Dependency>freetype</Dependency>
+            <Dependency>gtk2</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="executable">/usr/bin</Path>
+            <Path fileType="library">/usr/lib</Path>
+            <Path fileType="doc">/usr/share/doc</Path>
+            <Path fileType="localedata">/usr/share/locale</Path>
+            <Path fileType="data">/usr/share/applications</Path>
+            <Path fileType="data">/usr/share/autostart</Path>
+            <Path fileType="data">/usr/share/dbus-1/services</Path>
+            <Path fileType="data">/usr/share/kde4/services</Path>
+        </Files>
+    </Package>
+
+    <History>
+        <Update release="1">
+            <Date>2013-02-06</Date>
+            <Version>3.1.0.498.20</Version>
+            <Comment>First release</Comment>
+            <Name>Osman Erkan</Name>
+            <Email>osman.erkan@yandex.com</Email>
+        </Update>
+    </History>
+</PISI>
