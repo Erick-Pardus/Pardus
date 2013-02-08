@@ -1,0 +1,24 @@
+Authors: Andreas Tille, Charles Plessy
+Forwarded: https://savannah.nongnu.org/bugs/index.php?23958
+Description: Corrects the FreeDesktop menu entry.
+ Application is not a valid category, see:
+ http://standards.freedesktop.org/menu-spec/menu-spec-1.0.html
+Lisense: same as aeskulap itself.
+Index: aeskulap/src/aeskulap.desktop
+===================================================================
+--- aeskulap.orig/src/aeskulap.desktop
++++ aeskulap/src/aeskulap.desktop
+@@ -1,11 +1,10 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Name=Aeskulap Viewer
+ Comment=Medical image viewer and DICOM network client
+ Exec=aeskulap
+ Icon=aeskulap
+ Terminal=false
+ Type=Application
+-Categories=Application;Graphics;
++Categories=Viewer;MedicalSoftware;Graphics;
+ StartupNotify=true
+-MimeType=image/dicom
++MimeType=image/dicom;

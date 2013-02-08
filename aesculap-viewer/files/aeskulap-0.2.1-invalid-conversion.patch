@@ -1,0 +1,13 @@
+Index: dcmtk/dcmdata/libsrc/dcdict.cc
+===================================================================
+--- dcmtk/dcmdata/libsrc/dcdict.cc.orig	2006-03-08 10:25:13.000000000 +0100
++++ dcmtk/dcmdata/libsrc/dcdict.cc	2011-07-13 15:11:16.933892659 +0200
+@@ -244,7 +244,7 @@ parseVMField(char* vmField, int& vmMin,
+ static int
+ splitFields(const char* line, char* fields[], int maxFields, char splitChar)
+ {
+-    char* p;
++    const char* p;
+     int foundFields = 0;
+     int len;
+ 

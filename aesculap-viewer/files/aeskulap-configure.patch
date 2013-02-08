@@ -1,0 +1,125 @@
+diff -ubrN aeskulap-0.2.2-beta1.orig/configure.in aeskulap-0.2.2-beta1/configure.in
+--- aeskulap-0.2.2-beta1.orig/configure.in	2007-05-24 20:59:09.000000000 +0200
++++ aeskulap-0.2.2-beta1/configure.in	2007-11-12 23:03:37.000000000 +0100
+@@ -30,7 +30,6 @@
+ AC_PROG_CC
+ AC_PROG_CXX
+ AC_PROG_INSTALL
+-
+ if test x"$MINGW32" = xno ; then
+ AM_BINRELOC
+ else
+@@ -80,6 +79,7 @@
+ AC_SUBST(GTHREAD_CFLAGS)
+ AC_SUBST(GTHREAD_LIBS)
+ 
++
+ if test x"$MINGW32" = xno ; then
+ 
+ PKG_CHECK_MODULES(GCONFMM, gconfmm-2.6 >= 2.10.0)
+@@ -95,32 +95,16 @@
+ fi
+ 
+ 
+-dnl AC_CONFIG_SUBDIRS(dcmtk)
+-
+-if test x"$MINGW32" = xyes ; then
+-
+-DCMTK_CFLAGS="-DHAVE_CONFIG_H -I\$(prefix)/include"
+-DCMTK_LIBS="-L\$(prefix)/lib -ldcmjpeg -lijg8 -lijg12 -lijg16 -ldcmimage -ldcmimgle -ldcmnet -ldcmdata -lofstd -lwsock32"
+-
+-else
+-
+-DCMJPEG_LIBS="-L../dcmtk/dcmjpeg/libijg8 -L../dcmtk/dcmjpeg/libijg12 -L../dcmtk/dcmjpeg/libijg16 -lijg8 -lijg12 -lijg16"
+-AC_SUBST(DCMJPEG_LIBS)
+-
+-DCMTK_CFLAGS="-DHAVE_CONFIG_H -I\$(top_srcdir)/dcmtk/config/include -I\$(top_srcdir)/dcmtk/ofstd/include -I\$(top_srcdir)/dcmtk/dcmdata/include -I\$(top_srcdir)/dcmtk/dcmnet/include -I\$(top_srcdir)/dcmtk/dcmimage/include -I\$(top_srcdir)/dcmtk/dcmimgle/include -I\$(top_srcdir)/dcmtk/dcmjpeg/include"
+-DCMTK_LIBS="-L../dcmtk/ofstd/libsrc \
+--L../dcmtk/dcmdata/libsrc \
+--L../dcmtk/dcmnet/libsrc \
+--L../dcmtk/dcmjpeg/libsrc \
+--L../dcmtk/dcmimage/libsrc \
+--L../dcmtk/dcmimgle/libsrc \
+-\$(DCMJPEG_LIBS) -ldcmjpeg -ldcmimage -ldcmimgle -ldcmnet -ldcmdata -lofstd -lrt -lpthread"
+-
+-fi
++dnl use Debian packages dcmtk
++dnl AC_CHECK_LIB(dcmimage)
++AC_CHECK_HEADER(dcmtk/config/osconfig.h)
+ 
+ AC_SUBST(DCMTK_CFLAGS)
+ AC_SUBST(DCMTK_LIBS)
+ 
++DCMTK_CFLAGS="-DHAVE_CONFIG_H -I\$(prefix)/include"
++DCMTK_LIBS="-L\$(prefix)/lib -ldcmjpeg -lijg8 -lijg12 -lijg16 -ldcmimage -ldcmimgle -ldcmnet -ldcmdata -lofstd -lwrap"
++
+ dnl set PREFIX
+ if test "x${prefix}" = "xNONE"; then
+     packageprefix=${ac_default_prefix}
+@@ -128,16 +112,13 @@
+     packageprefix=${prefix}
+ fi
+ 
+-DCMTK_SUBDIR=""
+ if test x"$MINGW32" = xno ; then
+-DCMTK_SUBDIR="dcmtk"
+ LDFLAGS_AESKULAP_LIBS="-Wl,-rpath,${prefix}/lib/aeskulap -avoid-version"
+ else
+ LDFLAGS_MINGW32="-mwindows"
+ LDFLAGS_AESKULAP_LIBS="-avoid-version -no-undefined"
+ fi
+ 
+-AC_SUBST(DCMTK_SUBDIR)
+ AC_SUBST(LDFLAGS_MINGW32)
+ AC_SUBST(LDFLAGS_AESKULAP_LIBS)
+ 
+@@ -160,12 +141,3 @@
+ packaging/win32/aeskulap.iss
+ ])
+ 
+-
+-if test x"$MINGW32" = xno ; then
+-
+-cd $srcdir/dcmtk
+-export CFLAGS="$CFLAGS"
+-export CXXFLAGS="$CXXFLAGS"
+-sh ./configure --without-openssl --without-zlib --without-libwrap --prefix=${prefix} --libdir=${prefix}/lib/aeskulap
+-
+-fi
+diff -ubrN aeskulap-0.2.2-beta1.orig/Makefile.am aeskulap-0.2.2-beta1/Makefile.am
+--- aeskulap-0.2.2-beta1.orig/Makefile.am	2007-05-24 21:19:55.000000000 +0200
++++ aeskulap-0.2.2-beta1/Makefile.am	2007-11-07 07:23:00.000000000 +0100
+@@ -1,6 +1,5 @@
+ SUBDIRS = \
+ 	po \
+-	$(DCMTK_SUBDIR) \
+ 	configuration \
+ 	imagepool \
+ 	widgets \
+@@ -21,7 +20,6 @@
+ 	AUTHORS \
+ 	COPYING \
+ 	COPYING.LIB \
+-	COPYING.DCMTK \
+ 	INSTALL \
+ 	README \
+ 	aeskulap.cbp \
+@@ -39,18 +37,7 @@
+ 
+ @INTLTOOL_DESKTOP_RULE@
+ 
+-dist-hook:
+-	mkdir -p $(distdir)/dcmtk
+-	cp -Rf $(top_srcdir)/dcmtk/* $(distdir)/dcmtk
+-	cd $(distdir)/dcmtk && make distclean
+-	list=`find $(distdir)/dcmtk -name "CVS"` && rm -Rf $$list
+-	list=`find $(distdir)/dcmtk -name ".cvsignore"` && rm -f $$list
+-	list=`find $(distdir)/dcmtk -name ".#*"` && rm -f $$list
+-	list=`find $(distdir)/dcmtk -name "*.a"` && rm -f $$list
+-	list=`find $(distdir)/dcmtk -name "*.so"` && rm -f $$list
+-
+ distclean: distclean-recursive
+-	if test x"" != "x" ; then cd ./dcmtk && make distclean ; fi
+ 	-rm -f $(am__CONFIG_DISTCLEAN_FILES)
+ 	-rm -f Makefile
+ 

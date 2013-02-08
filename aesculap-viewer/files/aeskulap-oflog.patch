@@ -1,0 +1,26 @@
+Index: aeskulap-0.2.2b1/configure
+===================================================================
+--- aeskulap-0.2.2b1.orig/configure	2011-02-14 13:39:50.000000000 +0100
++++ aeskulap-0.2.2b1/configure	2011-02-14 13:38:39.000000000 +0100
+@@ -24361,7 +24361,7 @@
+ 
+ 
+ DCMTK_CFLAGS="-DHAVE_CONFIG_H -I\$(prefix)/include"
+-DCMTK_LIBS="-L\$(prefix)/lib -ldcmjpeg -lijg8 -lijg12 -lijg16 -ldcmimage -ldcmimgle -ldcmnet -ldcmdata -lofstd -lwsock32"
++DCMTK_LIBS="-L\$(prefix)/lib -ldcmjpeg -lijg8 -lijg12 -lijg16 -ldcmimage -ldcmimgle -ldcmnet -ldcmdata -lofstd -lwsock32 -loflog -lwrap"
+ 
+ if test "x${prefix}" = "xNONE"; then
+     packageprefix=${ac_default_prefix}
+Index: aeskulap-0.2.2b1/configure.in
+===================================================================
+--- aeskulap-0.2.2b1.orig/configure.in	2011-02-14 13:39:50.000000000 +0100
++++ aeskulap-0.2.2b1/configure.in	2011-02-14 13:38:48.000000000 +0100
+@@ -103,7 +103,7 @@
+ AC_SUBST(DCMTK_LIBS)
+ 
+ DCMTK_CFLAGS="-DHAVE_CONFIG_H -I\$(prefix)/include"
+-DCMTK_LIBS="-L\$(prefix)/lib -ldcmjpeg -lijg8 -lijg12 -lijg16 -ldcmimage -ldcmimgle -ldcmnet -ldcmdata -lofstd -lwsock32"
++DCMTK_LIBS="-L\$(prefix)/lib -ldcmjpeg -lijg8 -lijg12 -lijg16 -ldcmimage -ldcmimgle -ldcmnet -ldcmdata -lofstd -lwsock32 -loflog -lwrap"
+ 
+ dnl set PREFIX
+ if test "x${prefix}" = "xNONE"; then

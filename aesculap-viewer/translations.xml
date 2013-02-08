@@ -1,0 +1,8 @@
+<?xml version="1.0" ?>
+<PISI>
+    <Source>
+	<Name>aeskulap</Name>
+	<Summary xml:lang="tr">Tıbbi Resim Görüntüleme Programı</Summary>
+	<Description xml:lang="tr">Aeskulap, DICOM biçiminde saklanmış özel resimlerin yüklenip görüntülenmesini sağlar. Bunun yanısıra ağ üzerinden PACS adı verilen arşiv düğümlerinden DICOM resimlerinin çekilmesini ve sorgulanmasını da sağlamaktadır.</Description>
+    </Source>
+</PISI>

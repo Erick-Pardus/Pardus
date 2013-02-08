@@ -1,0 +1,12 @@
+Index: configuration/aconfiguration-gconf.cpp
+===================================================================
+--- configuration/aconfiguration-gconf.cpp.orig	2006-03-07 09:21:05.000000000 +0100
++++ configuration/aconfiguration-gconf.cpp	2011-07-13 16:52:43.716797402 +0200
+@@ -28,6 +28,7 @@
+ 
+ #include <gconfmm.h>
+ #include <iostream>
++#include <cstdio>
+ 
+ namespace Aeskulap {
+ 

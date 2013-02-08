@@ -1,0 +1,68 @@
+Index: aeskulap-0.2.2b1/imagepool/netloader.cpp
+===================================================================
+--- aeskulap-0.2.2b1.orig/imagepool/netloader.cpp	2011-02-14 11:48:44.000000000 +0100
++++ aeskulap-0.2.2b1/imagepool/netloader.cpp	2011-02-14 11:48:47.000000000 +0100
+@@ -112,7 +112,7 @@
+ 		e->putString("STUDY");
+ 		query.insert(e);
+ 
+-		e = newDicomElement(DCM_PatientsName);
++		e = newDicomElement(DCM_PatientName);
+ 		query.insert(e);
+ 
+ 		e = newDicomElement(DCM_PatientID);
+Index: aeskulap-0.2.2b1/imagepool/netquery.cpp
+===================================================================
+--- aeskulap-0.2.2b1.orig/imagepool/netquery.cpp	2011-02-14 11:48:44.000000000 +0100
++++ aeskulap-0.2.2b1/imagepool/netquery.cpp	2011-02-14 11:48:47.000000000 +0100
+@@ -210,7 +210,7 @@
+ 	e->putString(dicom_enc.c_str());
+ 	query.insert(e);
+ 
+-	e = newDicomElement(DCM_PatientsName);
++	e = newDicomElement(DCM_PatientName);
+ 	e->putString(patientsname.c_str());
+ 	query.insert(e);
+ 
+@@ -225,10 +225,10 @@
+ 	e->putString(modality.c_str());
+ 	query.insert(e);
+ 
+-	e = newDicomElement(DCM_PatientsBirthDate);
++	e = newDicomElement(DCM_PatientBirthDate);
+ 	query.insert(e);
+ 
+-	e = newDicomElement(DCM_PatientsSex);
++	e = newDicomElement(DCM_PatientSex);
+ 	query.insert(e);
+ 
+ 	e = newDicomElement(DCM_StudyDate);
+Index: aeskulap-0.2.2b1/imagepool/poolinstance.cpp
+===================================================================
+--- aeskulap-0.2.2b1.orig/imagepool/poolinstance.cpp	2011-02-14 12:10:41.000000000 +0100
++++ aeskulap-0.2.2b1/imagepool/poolinstance.cpp	2011-02-14 12:11:04.000000000 +0100
+@@ -515,7 +515,7 @@
+ 	}
+ 
+ 	// set ManufacturersModelName
+-	if(dset->findAndGetOFString(DCM_ManufacturersModelName, ofstr).good()) {
++	if(dset->findAndGetOFString(DCM_ManufacturerModelName, ofstr).good()) {
+ 		r->m_model = ofstr.c_str();
+ 	}
+ 	
+@@ -565,12 +565,12 @@
+ 	//std::cout << "intercept: " << r->m_intercept << std::endl;
+ 
+ 	// study params
+-	if(dset->findAndGetOFString(DCM_PatientsName, ofstr).good()) {
++	if(dset->findAndGetOFString(DCM_PatientName, ofstr).good()) {
+ 		r->m_patientsname = r->convert_string(ofstr.c_str());
+ 	}
+-	dset->findAndGetOFString(DCM_PatientsBirthDate, ofstr);
++	dset->findAndGetOFString(DCM_PatientBirthDate, ofstr);
+ 	r->m_patientsbirthdate = ofstr.c_str();
+-	dset->findAndGetOFString(DCM_PatientsSex, ofstr);
++	dset->findAndGetOFString(DCM_PatientSex, ofstr);
+     r->m_patientssex = ofstr.c_str();
+ 	if(dset->findAndGetOFString(DCM_StudyDescription, ofstr).good()) {
+ 		r->m_studydescription = r->convert_string(ofstr.c_str());

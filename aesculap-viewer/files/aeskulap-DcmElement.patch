@@ -1,0 +1,21 @@
+The original API change happen on:
+http://git.dcmtk.org/web?p=dcmtk.git;a=commit;h=7e87c88918a0ac1f682116cbf0c3205487bb9086
+
+According to DCMTK team:
+In the long term, we are trying to get rid of the member variable "errorFlag" in the dcmdata module. All methods should return an OFCondition instead of setting an internal variable for this purpose.
+Index: aeskulap-0.2.2b1/imagepool/poolassociation.h
+===================================================================
+--- aeskulap-0.2.2b1.orig/imagepool/poolassociation.h	2011-02-14 11:00:36.000000000 +0100
++++ aeskulap-0.2.2b1/imagepool/poolassociation.h	2011-02-14 11:00:52.000000000 +0100
+@@ -115,9 +115,7 @@
+ 
+ 		if(value != NULL) {
+ 			if (strlen(value) > 0) {
+-				elem->putString(value);
+-
+-				if (elem->error() != EC_Normal) {
++				if( elem->putString(value) != EC_Normal) {
+ 					printf("cannot put tag value: (%04x,%04x)=\"%s\"", g, e, value);
+ 					return false;
+ 				}
+

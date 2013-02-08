@@ -1,0 +1,16 @@
+Index: dcmtk/config/include/osconfig.h
+===================================================================
+--- dcmtk/config/include/osconfig.h.orig	2006-03-08 10:25:13.000000000 +0100
++++ dcmtk/config/include/osconfig.h	2011-07-11 21:11:42.444781839 +0200
+@@ -26,6 +26,11 @@
+ ** Just include the automatically generated <cfunix.h>
+ */
+ #include "cfunix.h"
++/*
++ * From gcc 4.3 it is mandatory to include <cstring> or <memory> if using
++ * strcmp or memcpy from std:memcpy for instance or here as it is compiled with gcc string.h
++ */
++#include <string.h>
+ 
+ #elif defined(_WIN32)
+ /*

@@ -1,0 +1,14 @@
+Index: configuration/aconfiguration.h
+===================================================================
+--- configuration/aconfiguration.h.orig	2006-03-06 12:07:25.000000000 +0100
++++ configuration/aconfiguration.h	2011-07-13 15:26:40.296349039 +0200
+@@ -33,6 +33,9 @@
+ #include <string>
+ #include <map>
+ #include <vector>
++// fix missing gettext includes
++#include <libintl.h>
++#include <locale.h>
+ 
+ #include "awindowlevel.h"
+ 

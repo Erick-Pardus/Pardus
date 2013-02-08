@@ -1,0 +1,10 @@
+--- aeskulap-0.2.2-beta1.orig/configuration/aconfiguration-gconf.cpp
++++ aeskulap-0.2.2-beta1/configuration/aconfiguration-gconf.cpp
+@@ -27,6 +27,7 @@
+ */
+ 
+ #include <gconfmm.h>
++#include <cstdio>
+ #include <iostream>
+ 
+ namespace Aeskulap {

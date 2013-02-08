@@ -1,0 +1,79 @@
+<?xml version="1.0" ?>
+<!DOCTYPE PISI SYSTEM "http://www.pardus.org.tr/projeler/pisi/pisi-spec.dtd">
+<PISI>
+    <Source>
+        <Name>aesculap-viewer</Name>
+        <Homepage>http://aeskulap.nongnu.org</Homepage>
+        <Packager>
+            <Name>Osman Erkan</Name>
+            <Email>osman.erkan@yandex.com</Email>
+        </Packager>
+        <License>GPLv2</License>
+        <Icon>ginkgocadx</Icon>
+        <IsA>app:gui</IsA>
+        <Summary>Aeskulap is a medical image viewer.</Summary>
+        <Description>It is able to load a series of special images stored in the DICOM format for review. Additionally Aeskulap is able to query and fetch DICOM images from archive nodes (also called PACS) over the network.</Description>
+        <!--<Archive sha1sum="3930591451d1359c6fef1bfe2b56163ebfa69d1a" type="targz">http://www.bms-austria.com/%7Epipelka/aeskulap/aeskulap-0.2.1.tar.gz</Archive>-->
+	<Archive sha1sum="8f7eb38cf3480c41ff966597f0e0d48671d9bb63" type="targz">http://www.bms-austria.com/~pipelka/aeskulap/aeskulap-0.2.2-beta1.tar.gz</Archive>
+        <BuildDependencies>
+            <Dependency>gtk2-devel</Dependency>
+            <Dependency>gtkmm-devel</Dependency>
+            <Dependency>libglademm-devel</Dependency>
+            <Dependency>gconfmm-devel</Dependency>
+            <Dependency>zlib-devel</Dependency>
+            <Dependency>libpng-devel</Dependency>
+            <Dependency>tiff-devel</Dependency>
+	    <Dependency>desktop-file-utils</Dependency>
+	    <Dependency>perl-XML-Parser</Dependency>
+        </BuildDependencies>
+	<Patches>
+	    <!--<Patch level="1">aeskulap-circular-svg.patch</Patch>-->
+	    <!--<Patch level="1">aeskulap-oflog.patch</Patch>-->
+	    <!--<Patch level="1">aeskulap-configure.patch</Patch>
+	    <Patch level="1">aeskulap-desktop.patch</Patch>
+	    <Patch level="1">aeskulap-findAndCopyElement.patch</Patch>
+	    <Patch level="1">aeskulap-gcc.patch</Patch>
+	    <Patch level="1">aeskulap-i18n.patch</Patch>
+	    <Patch level="1">aeskulap-patientNames.patch</Patch>
+	    <Patch level="1">aeskulap-DcmElement.patch</Patch>-->
+	    <!--<Patch>aeskulap-0.2.1-missing-cstdio.patch</Patch>
+	    <Patch>aeskulap-0.2.1-as-needed.patch</Patch>
+	    <Patch>aeskulap-0.2.1-strcmp-fix.patch</Patch>
+	    <Patch>aeskulap-0.2.1-include-gettext.patch</Patch>-->
+	</Patches>
+    </Source>
+
+    <Package>
+        <Name>aesculap-viewer</Name>
+        <RuntimeDependencies>
+            <Dependency>gtk2</Dependency>
+            <Dependency>gtkmm</Dependency>
+            <Dependency>libglademm</Dependency>
+            <Dependency>gconfmm</Dependency>
+            <Dependency>zlib</Dependency>
+            <Dependency>libpng</Dependency>
+            <Dependency>tiff</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="config">/etc</Path>
+            <Path fileType="executable">/usr/bin</Path>
+	    <Path fileType="library">/usr/lib</Path>
+	    <Path fileType="data">/usr/share/aeskulap</Path>
+	    <Path fileType="data">/usr/share/applications</Path>
+	    <Path fileType="data">/usr/share/icons</Path>
+	    <Path fileType="localedata">/usr/share/locale</Path>
+	    <Path fileType="man">/usr/share/man</Path>
+	    <Path fileType="doc">/usr/share/doc</Path>
+        </Files>
+    </Package>
+
+    <History>
+        <Update release="1">
+            <Date>2013-02-06</Date>
+            <Version>0.2.2</Version>
+            <Comment>First release</Comment>
+            <Name>Osman Erkan</Name>
+            <Email>osman.erkan@yandex.com</Email>
+        </Update>
+    </History>
+</PISI>
