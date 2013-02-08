@@ -1,8 +1,0 @@
-[Desktop Entry]
-Type=MimeType
-Comment=Super Nintendo game rom
-Comment[tr]=Super Nintendo oyunu romu
-Icon=package_games_arcade
-MimeType=application/x-snes-rom
-Patterns=*.smc
-
